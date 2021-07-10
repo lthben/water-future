@@ -1,2 +1,10 @@
 # water-news
-A single page app visualising news related to water sustainability on a world map
+###A simple educational website to create awareness about water sustainability###
+
+Explanations of the technologies used
+
+Approach taken 
+
+Link to live site
+
+Unsolved problems, etc
