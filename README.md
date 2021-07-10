@@ -1,10 +1,11 @@
 # water-news
-###A simple educational website to create awareness about water sustainability###
+A simple educational website to create awareness about water sustainability
 
-Explanations of the technologies used
+## Explanations of the technologies used
 
-Approach taken 
+## Approach taken 
 
-Link to live site
+## Link to live site
+https://pages.git.generalassemb.ly/lthben/water-news/
 
-Unsolved problems, etc
+## Unsolved problems, etc
