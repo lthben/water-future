@@ -90,7 +90,7 @@ function display_explanation() {
 
 function welcome_screen() {
 
-    qnIndex = 1;
+    qnIndex = 0;
     isFirstTryCorrect = [];
     
     const $starthtml = `
