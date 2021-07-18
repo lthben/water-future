@@ -7,9 +7,14 @@ DOM manipulation
 
 ## Approach taken 
 Content based on actual live workshop done by me
-Use of colours
+Responsive design
+Layout
+Typography
+Colours
 Gamification
 Interactivity 
+Animations
+Rich media - videos, sound
 
 ## Link to live site
 https://pages.git.generalassemb.ly/lthben/water-news/
