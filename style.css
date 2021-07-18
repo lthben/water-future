@@ -3,10 +3,6 @@ div {
     background: lightcyan;
 }
 
-#goal6-img {
-    width: 250px;
-}
-
-#un-logo-img {
-    width: 250px;
+img {
+    max-width: 800px;
 }

@@ -1,51 +1,110 @@
 const questions = [
-    //Q1
     ` 
+    <b>Question 1</b><br />
     ____ % of the world's water is freshwater.<br /> 
     70 % of this is trapped in the ice caps of Antarctica and Greenland.<br />
     As a result, only ____ % of the world's water is available for human use.
-    `,
-    //Q2
-    ` 
+    `,`
+    <b>Question 2</b><br />
     ____ is the process of water turning into water vapour by heat from the sun.<br /> 
     ____ is the process of water vapour mixing wh dust particles and various gases to form clouds high in the atmosphere where  is colder.<br /> 
     ____ is the process of clouds releasing their water content in the form of rain, hail or snow.<br />
     ____ is the process of plants and soil releasing water vapour into the air.
-    `,
-    //Q3
-    `
+    `,`
+    <b>Question 3</b><br />
+    Agriculture uses ____ % of the world’s freshwater. 
+    `,`
+    <b>Question 4</b><br />
     Which place became the first major city in the world to almost hit Day Zero when it runs out of water? Hint: This happened in 2018. 
+    `,`
+    <b>Question 5</b><br />
+    A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding. A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?
+    <img src='./media/man-drops-iphone.jpeg' />
+    `,`
+    <b>Question 6</b><br />
+    According to the World Health Organization, ____ % of all diseases in the developing world are water related. <br />
+    By 2025, the United Nation estimates that ____ % of the world’s population residing in 50 countries will face water shortage.
+    `,`
+    <b>Question 7</b><br />
+    Of earth’s 37 major underground reservoirs, ____ are on track to be irreversibly emptied. 
+    `,`
+    <b>Question 8</b><br />
+    Regarding ways to conserve water, which statement is false?
+    `,`
+    <b>Question 9</b><br />
+    1 kg of wheat requires 1 litre of water to produce. In comparison, 400g of beef requires ____ litres of water to produce.
+    `,`
+    <b>Question 10</b><br />
+    We  consume about ____ litres of water a day in hidden uses, such as the products we use and clothes we wear, but most especially in the food we eat.
     `
+
 ];
 
 const options = [
-    //Q1
-    { 
+    {  //Q1
         A: "30 80",
         B: "20 50",
         C: "10 10",
         D: "3.5 1"    
-    },
-    //Q2
-    { 
+    }, { //Q2 
         A: "Transpiration, Precipitation, Condensation, Evaporation",
         B: "Evaporation, Condensation, Precipitation, Transpiration",
         C: "Condensation, Transpiration, Evaporation, Precipitation",
         D: "Evaporation, Precipitation, Condensation, Transpiration"
-    },
-    //Q3
-    {
+    }, { //Q3
+        A: "10 - 30",
+        B: "30 - 50",
+        C: "50 - 70", 
+        D: "70 - 90"
+    }, { //Q4
         A: "Cape Town, Africa",
         B: "Manila, Philippines",
         C: "Taipei, Taiwan",
         D: "Bangkok, Thailand"
+    }, { //Q5    
+        A: "This is fake news",
+        B: "He hired a scuba diver to retrieve it for him",
+        C: "The lake dried up and someone found it back for him",
+        D: "A fisherman fished it out of the lake by luck"
+    }, { //Q6
+        A: "10 2",
+        B: "30 5",
+        C: "50 10",
+        D: "80 30"
+    }, { //Q7
+        A: "2",
+        B: "8",
+        C: "14",
+        D: "21"
+    }, { //Q8
+        A: "Farmers adopting efficient irrigation methods in agriculture",
+        B: "Eating more meat and less fruit and vegetables",
+        C: "Industries reusing and recycling water",
+        D: "Reducing food waste since food takes a lot of water to produce"
+    }, { //Q9
+        A: "500",
+        B: "1000",
+        C: "2000",
+        D: "5000"
+    }, { //Q10
+        A: "100",
+        B: "500",
+        C: "1000",
+        D: "3000"
     }
 ];
 
 const answers = [
     'D',
     'B',
-    'A'
+    'D',
+    'A',
+    'C',
+    'D',
+    'D',
+    'B',
+    'D',
+    'D'
 ]
 
 const explanations = [
@@ -63,12 +122,53 @@ const explanations = [
     <p> Watch the first three minutes of the following video for a similar explanation. </p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ncORPosDrjI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     `,
-    `explanation 3`,
-    `explanation 4`,
-    `explanation 5`,
-    `explanation 6`,
-    `explanation 7`,
-    `explanation 8`,
-    `explanation 9`,
-    `explanation 10`,
+    //Q3
+    `
+    <img src='./media/where-the-water-goes-most.png' />
+    <p>Yup, agriculture is the biggest culprit when it comes to global water use. That's why it is so important to find efficient means and ways of conserving water in agriculture, such as ensuring pipes do not leak, recycling greywater, using a closed-loop irrigation system etc.</p>
+    `,
+    //Q4
+    `
+    <img src='./media/cape-town.jpeg' />
+    <p>For Cape Town, Day Zero hasn’t disappeared, it’s merely been delayed. The catastrophic shortage that nearly turned off its faucets was narrowly averted in 2018 with strict water rationing measures.</p>
+    <img src='./media/global-water-use.png' />
+    <p> Note the 7-fold increase in over just one century. </p>
+    <img src='./media/water-stressed-countries.png' />
+    <p> A map of predicted water-stressed countries in 2040 </p>
+    `,
+    //Q5
+    `
+    <p> It's not fake news! Thanks to the waterproof case and the fact that the entire lake lost almost all its water due to drought in most of 2020. The man was lucky that the person who picked it up while walking across the dried bed of the lake turned it on and managed to trace the owner.See the 'before' and 'after' image of the drought-stricken lake below. </p>
+    <img src='./media/sun-moon-lake-dry.jpeg' />
+    <p>Experts believe that Taiwan's water problems have been slowly building as a result of poor handling of its water resources. Despite the island experiencing 2.6 times the amount of the world's average annual rainfall, inadequate planning and an ignorance of water recycling have led to the current crisis.</p>
+    <p>One water expert named Lee Hong-yuan explained that Taiwan's agriculture industry utilizes about 70 percent of the country's water supply, but outdated irrigation channels have caused plenty of waste, with almost half of the water being transported being lost to leaks, and a quarter being lost to evaporation during transportation. [Source: https://sea.mashable.com/tech/15242/man-drops-iphone-in-lake-gets-it-back-one-year-later-in-full-working-condition]</p>
+    `,
+    //Q6
+    `
+    <p>These statistics show the importance of access to clean freshwater for sanitation and disease prevention, and the rising trend of water stress in the world.</p>
+    `,
+    //Q7
+    `
+    <p>This illustrates the concept of peak non-renewable water, where groundwater aquifers are being overpumped (or contaminated) faster than nature recharges them (this example is most like the peak oil debate). Ultimately, peak water is not about running out of freshwater, but about reaching physical, economic, and environmental limits on meeting human demands for water and the subsequent decline of water availability and use. [Source: https://en.wikipedia.org/wiki/Peak_water] </p>
+    <p>Watch the following video from 02:02 to the 04:43 minute mark to learn about whether we are running out of clean water.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OCzYdNSJF-k?start=122" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p>tldr: the total amount of water in the world is constant due to the water cycle but whether the water is available for human use is another matter entirely.</p>
+    `,
+    //Q8
+    `
+    <p>This is a give-away question. Answer is self-explanatory. Eat less meat and more fruit and vegetables to conserve water!</p>
+    `,
+    //Q9
+    `
+    <p>Why does beef take so much water to produce? Answer: To simplify, let’s look at Beef. Did you know that the juicy steak you love to eat uses up 15,400 liters of water for every 1 kilo? How? Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned, the cow needs to drink – all of these adds up to 3,091,000 liters of water! All of that water just to make an innocent looking but delicious steak.</p>
+    <p>In comparison, 1kg of chocolate requires 24,000 litres of water. 1 kg of paper only requires 10 litres of water. [Source: https://www.theworldcounts.com/stories/average-daily-water-usage]</p>
+    `,
+    //Q10
+    `
+    This is the 'hidden' water we all use daily. More images of such uses: 
+    <img src='./media/cocacola-25l.png' /></br />
+    <img src='./media/tshirt-2500l.png' /></br />
+    <img src='./media/hamburger-15000l.png' /></br />
+    [Source: https://www.theworldcounts.com/stories/average-daily-water-usage]
+    `
 ];

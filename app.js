@@ -90,17 +90,13 @@ function display_explanation() {
 
 function welcome_screen() {
 
-    qnIndex = 0;
-    isFirstTryCorrect = [];
-    
     const $starthtml = `
-        <h1> Water Future </h1>
-        <h3> Learn about water sustainability </h3>
-        <img src='./media/Goal 6/E_WEB_06.png' id='goal6-img'/>
-        <img src='./media/E_SDG_logo_without_UN_emblem_horizontal_WEB.png' id='un-logo-img' />
-        <p> 
-            Water scarcity affects more than 40% of the world's population. Learn more about the United Nations Sustainable Development Goal 6 'Clean Water and Sanitation' via an interactive quiz of ${numQn} questions.
-        </p>
+        <h1> The Future of our Water </h1>
+        <b> Learn about water sustainability </b><br />
+        <img src="./media/water-as-petroleum.png" /> <br />
+        <p>We will learn about why the above quote about water is true, via an interactive quiz of ${numQn} questions."</p>
+        <img src='./media/Goal 6/E_SDG_action_card_square_6.jpg' />
+        <p>This topic is closely related to the United Nations Sustainable Development Goal 6 'Clean Water and Sanitation'</p>
         <button type="submit" class="btn btn-primary" id="next-button">Start</button>
     `
     $('.container').html($starthtml);
@@ -135,6 +131,8 @@ function end_screen() {
     $('.container').html($endhtml);
     $('#next-button').on('click', (e) => {
         e.preventDefault();
+        qnIndex = 0;
+        isFirstTryCorrect = [];
         welcome_screen();
     });
 }
