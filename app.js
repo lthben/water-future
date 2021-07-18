@@ -90,7 +90,7 @@ function display_explanation() {
 
 function welcome_screen() {
 
-    qnIndex = 0;
+    qnIndex = 1;
     isFirstTryCorrect = [];
     
     const $starthtml = `
@@ -127,6 +127,9 @@ function end_screen() {
     const $endhtml = `
         <p> Thank you for spending time on this quiz. Hope you learnt something interesting! </p>
         <p> You have got ${score} out of ${numQn} questions correct on the first attempt.</p>
+        <p> The following 18 minute video is a highly recommended watch about this topic. </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br />
         <button type="submit" class="btn btn-primary" id="next-button">Retake quiz</button>
     `
     $('.container').html($endhtml);

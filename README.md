@@ -1,7 +1,7 @@
 ![](./media/quote-banner.jpg)
 
 # About
-A webpage with an educational quiz targeted at children to teach about water sustainability
+A webpage with an educational quiz to teach about water sustainability
 
 ## Explanations of the technologies used
 - Bootstrap
@@ -14,9 +14,8 @@ A webpage with an educational quiz targeted at children to teach about water sus
 - Gamification
 - Interactivity 
 - Animations
-- Rich media - videos, sound
 
 ## Link to live site
-https://pages.git.generalassemb.ly/lthben/water-news/
+https://pages.git.generalassemb.ly/lthben/water-future/
 
 ## Unsolved problems, etc
