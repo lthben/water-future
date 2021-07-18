@@ -9,10 +9,8 @@ A webpage with an educational quiz targeted at children to teach about water sus
 
 ## Approach taken 
 - Content based on actual live workshop done by me
+- Layout, Typography, Colours
 - Responsive design
-- Layout
-- Typography
-- Colours
 - Gamification
 - Interactivity 
 - Animations

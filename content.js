@@ -30,3 +30,16 @@ const answers = [
     'D',
     'B'
 ]
+
+const explanations = [
+    `explanation 1`,
+    `explanation 2`,
+    `explanation 3`,
+    `explanation 4`,
+    `explanation 5`,
+    `explanation 6`,
+    `explanation 7`,
+    `explanation 8`,
+    `explanation 9`,
+    `explanation 10`,
+];

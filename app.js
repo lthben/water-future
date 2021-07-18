@@ -1,7 +1,9 @@
 'use strict'
 
+// const start = Date.now();
 let qnIndex = 0;
 const numQn = answers.length;
+let isFirstTryCorrect = [];
 
 function display_question() {
     
@@ -47,9 +49,12 @@ function eval_user_sel() {
         $(':input[type="submit"]').prop('disabled', true);
         $(':input[type="radio"]').prop('disabled', true);
         display_explanation();
+        if (isFirstTryCorrect.length <= qnIndex ) isFirstTryCorrect.push(true);
     }
-    else isCorrect = "Try Again";
-    
+    else {
+        if (isFirstTryCorrect.length <= qnIndex ) isFirstTryCorrect.push(false);
+        isCorrect = "Try Again";
+    }
     const $html = `<h3>${isCorrect}</h3>`;
     $div.html($html);
     $('.result-container').append($div);
@@ -57,24 +62,25 @@ function eval_user_sel() {
 
 function display_explanation() {
     const $div = $('<div>');
-    const $html = `<h4>EXPLANATION</h4>`
+    const $html = explanations[qnIndex];
     $div.html($html);
     $('.explanation-container').append($div);
 
-    const $form = $('<form>');
     const $buttondiv = $('<div>').addClass('button-div');
     const $buttonhtml = `<button type="submit" class="btn btn-primary" id="next-button">Next</button>`;
     $buttondiv.html($buttonhtml);
-    $form.append($buttondiv);
-    $('.explanation-container').append($form);
+    $('.explanation-container').append($buttondiv);
     
     $('#next-button').on('click', (e) => {
         e.preventDefault();
         $('.container').children().children().remove();
 
         qnIndex++;
-        if (qnIndex === numQn) console.log("finished"); 
-        else {
+        if (qnIndex === numQn) {
+            end_screen();
+            // const timeSpent = Date.now() - start;
+            // console.log(Math.round(timeSpent/1000) + " seconds spent");
+        } else {
             setTimeout(() => { 
                 display_question();
             }, 300);
@@ -82,8 +88,54 @@ function display_explanation() {
     }); 
 }
 
-$(() => {
+function welcome_screen() {
 
-    display_question();
+    qnIndex = 0;
+    isFirstTryCorrect = [];
     
+    const $starthtml = `
+        <h1> Water Future </h1>
+        <h3> Learn about water sustainability </h3>
+        <img src='./media/Goal 6/E_WEB_06.png' id='goal6-img'/>
+        <img src='./media/E_SDG_logo_without_UN_emblem_horizontal_WEB.png' id='un-logo-img' />
+        <p> 
+            Water scarcity affects more than 40% of the world's population. Learn more about the United Nations Sustainable Development Goal 6 'Clean Water and Sanitation' via an interactive quiz of ${numQn} questions.
+        </p>
+        <button type="submit" class="btn btn-primary" id="next-button">Start</button>
+    `
+    $('.container').html($starthtml);
+    $('#next-button').on('click', (e) => {
+        e.preventDefault();
+        $('.container').children().remove();
+
+        const $html = `
+            <div class="question-container"></div>
+            <div class="options-container"></div>
+            <div class="result-container"></div>
+            <div class="explanation-container"></div>
+        `
+        $('.container').html($html);
+
+        display_question();
+    });
+}
+
+function end_screen() {
+
+    const score = isFirstTryCorrect.filter(x => x===true).length;
+
+    const $endhtml = `
+        <p> Thank you for spending time on this quiz. Hope you learnt something interesting! </p>
+        <p> You have got ${score} out of ${numQn} questions correct on the first attempt.</p>
+        <button type="submit" class="btn btn-primary" id="next-button">Retake quiz</button>
+    `
+    $('.container').html($endhtml);
+    $('#next-button').on('click', (e) => {
+        e.preventDefault();
+        welcome_screen();
+    });
+}
+
+$(() => {
+    welcome_screen();
 }); //end window onload
