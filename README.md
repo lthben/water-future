@@ -1,4 +1,4 @@
-![](./media/quote-banner.jpeg)
+![](./media/quote-banner.jpg)
 
 # About
 A webpage with an educational quiz targeted at children to teach about water sustainability
