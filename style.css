@@ -19,7 +19,11 @@ img {
     display:flex;
     justify-content: center;
     align-items: center;
-    margin: 7% 0 7% 0;
+    margin: 10% 0 0 0;
+}
+
+.horz-centre-text {
+    text-align: center;
 }
 
 #qnIndex {
@@ -46,6 +50,6 @@ img {
     background-color: azure;
 }
 
-#submit-button #next-button{
+#submit-button, #next-button{
     margin-top: 2%;
 }

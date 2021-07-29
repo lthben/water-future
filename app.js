@@ -94,10 +94,10 @@ function welcome_screen() {
         <h1> The Future of our Water </h1>
         <h4> Learn about water sustainability </h4>
         </div>
-        <div class="row align-items-end">
+        <div class="row align-items-center">
             <div class="col-6"><img src='./media/Goal 6/E_SDG_action_card_square_6.jpg' width="100%"/></div>
             <div class="col-6">
-                <div class="row">
+                <div class="row horz-centre-text">
                     <p>It is said that water is going to be the petroleum of the 21st century. The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
                     <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. Learn more about this topic through this interactive quiz.</p>
                 </div>
@@ -129,12 +129,22 @@ function end_screen() {
     const score = isFirstTryCorrect.filter(x => x===true).length;
 
     const $endhtml = `
-        <p> Thank you for spending time on this quiz. Hope you learnt something interesting! </p>
-        <p> You have got ${score} out of ${numQn} questions correct on the first attempt.</p>
-        <p> The following 18 minute video is a highly recommended watch about this topic. </p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <br />
-        <button type="submit" class="btn btn-primary" id="next-button">Retake quiz</button>
+        <div id="mainTitle">
+        <h1> You have completed this quiz.</h1>
+        <h4> Hope you learnt something interesting!</h4>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="col-6">
+                <div class="row horz-centre-text">
+                    <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
+                    <p>This 18 minute video is a highly recommended watch about this topic.</p>
+                </div>
+                <div class="row">
+                    <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Retake quiz</button></div>
+                </div>
+            </div>
+        </div>
     `
     $('.container').html($endhtml);
     $('#next-button').on('click', (e) => {
@@ -146,5 +156,5 @@ function end_screen() {
 }
 
 $(() => {
-    welcome_screen();
+    end_screen();
 }); //end window onload
