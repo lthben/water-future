@@ -3,9 +3,12 @@
 let qnIndex = 0;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
+let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection
+let wrongLabelText = null;
+let wrongOptionID = null;
 
 function display_question() {
-    
+
     const $qndiv = $('<div>').addClass('qn-div').html(questions[qnIndex]);
     $('.question-container').append($qndiv);
 
@@ -19,52 +22,63 @@ function display_question() {
             ${opt}: ${_options[opt]}
             </label>
             `;
-        const $div = $('<div>').addClass('form-check').html($html);
+        const idName = `option${opt}`;
+        const $div = $('<div>').addClass('form-check').attr('id', idName).html($html);
         $form.append($div);
     }
-    
+
     const $buttondiv = $('<div>').addClass('button-div');
     const $buttonhtml = `<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>`;
     $buttondiv.html($buttonhtml);
     $form.append($buttondiv);
     $('.options-container').append($form);
-    
+
     $('#submit-button').on('click', (e) => {
         e.preventDefault();
         $('.result-container').children().remove();
-        setTimeout(() => { 
+        setTimeout(() => {
             eval_user_sel();
         }, 300);
-    }); 
+    });
 }
 
 function eval_user_sel() {
 
     let result = "";
     const $div = $('<div>');
-    $div.attr('id','result');
-    
-    if ( $('input:checked').val() === answers[qnIndex] ) {
+    $div.attr('id', 'result');
+
+    $(wrongOptionDivSelected).css('background-color', 'azure');
+    $(wrongOptionDivSelected).css('border', 'none');
+    $("#" + wrongOptionID).next().html(wrongLabelText);
+
+    let optionSelected = $('input:checked').val();
+    let divIDname = `#option${optionSelected}`;
+    let labelText = $("label[for='" + optionSelected + "']").text();
+    console.log(labelText);
+
+    // console.log($("input:checked").val());
+
+    if (optionSelected === answers[qnIndex]) {
         result = "&check;";
         $(':input[type="submit"]').prop('disabled', true);
         $(':input[type="radio"]').prop('disabled', true);
         display_explanation();
-        if (isFirstTryCorrect.length <= qnIndex ) isFirstTryCorrect.push(true);
-        // $div.css('background-color', 'rgba(0,128,0,0.3)');
-        $div.css('border','2px solid green');
-        $div.css('background-color','rgba(0,128,0,0.05)');
+        if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(true);
+        $(divIDname).css('border', '2px solid green');
+        $(divIDname).css('background-color', 'rgba(0,128,0,0.05)');
     }
     else {
-        if (isFirstTryCorrect.length <= qnIndex ) isFirstTryCorrect.push(false);
+        wrongOptionDivSelected = divIDname;
+        wrongLabelText = labelText;
+        wrongOptionID = optionSelected;
+        if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(false);
         result = "&cross;";
-        // $div.css('background-color', 'rgba(128,0,0,0.3)');
-        $div.css('border','2px solid red');
-        $div.css('background-color','rgba(128,0,0,0.05)');
+        $(divIDname).css('border', '2px solid red');
+        $(divIDname).css('background-color', 'rgba(128,0,0,0.05)');
     }
 
-    const $html = `<h3>${result}</h3>`;
-    $div.append($html);
-    $('.result-container').append($div);
+    $("#" + optionSelected).next().html(labelText + "&emsp;" + result);
 }
 
 function display_explanation() {
@@ -77,22 +91,24 @@ function display_explanation() {
     const $buttonhtml = `<button type="submit" class="btn btn-primary" id="next-button">Next</button>`;
     $buttondiv.html($buttonhtml);
     $('.explanation-container').append($buttondiv);
-    
+
     $('#next-button').on('click', (e) => {
         e.preventDefault();
         $('.container').children().children().remove();
 
+        wrongOptionDivSelected = null; 
+        wrongLabelText = null;
+        wrongOptionID = null;
+
         qnIndex++;
         if (qnIndex === numQn) {
             end_screen();
-            // const timeSpent = Date.now() - start;
-            // console.log(Math.round(timeSpent/1000) + " seconds spent");
         } else {
-            setTimeout(() => { 
+            setTimeout(() => {
                 display_question();
             }, 300);
         }
-    }); 
+    });
 }
 
 function welcome_screen() {
@@ -134,7 +150,7 @@ function welcome_screen() {
 
 function end_screen() {
 
-    const score = isFirstTryCorrect.filter(x => x===true).length;
+    const score = isFirstTryCorrect.filter(x => x === true).length;
 
     const $endhtml = `
         <div id="mainTitle">
