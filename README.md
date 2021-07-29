@@ -10,11 +10,11 @@ A webpage with an educational quiz to teach about water sustainability
 ## Approach taken 
 - Content based on actual live workshop done by me
 - Layout, Typography, Colours
-- Navigation: arrow keys, enter key, hamburger with side menu
 - Responsive design using Bootstrap
+- Navigation: arrow keys, enter key, hamburger with side menu
 - Gamification
 - Interactivity 
-- Animations
+- Animations (Animista)
 
 ## Link to live site
 https://pages.git.generalassemb.ly/lthben/water-future/

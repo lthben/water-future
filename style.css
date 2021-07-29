@@ -53,3 +53,8 @@ img {
 #submit-button, #next-button{
     margin-top: 2%;
 }
+
+#result {
+    padding: 1% 2%;
+    margin: 2% 0;
+}

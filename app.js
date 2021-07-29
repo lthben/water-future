@@ -40,22 +40,30 @@ function display_question() {
 
 function eval_user_sel() {
 
-    let isCorrect = "";
+    let result = "";
     const $div = $('<div>');
-
+    $div.attr('id','result');
+    
     if ( $('input:checked').val() === answers[qnIndex] ) {
-        isCorrect = "Correct";
+        result = "&check;";
         $(':input[type="submit"]').prop('disabled', true);
         $(':input[type="radio"]').prop('disabled', true);
         display_explanation();
         if (isFirstTryCorrect.length <= qnIndex ) isFirstTryCorrect.push(true);
+        // $div.css('background-color', 'rgba(0,128,0,0.3)');
+        $div.css('border','2px solid green');
+        $div.css('background-color','rgba(0,128,0,0.05)');
     }
     else {
         if (isFirstTryCorrect.length <= qnIndex ) isFirstTryCorrect.push(false);
-        isCorrect = "Try Again";
+        result = "&cross;";
+        // $div.css('background-color', 'rgba(128,0,0,0.3)');
+        $div.css('border','2px solid red');
+        $div.css('background-color','rgba(128,0,0,0.05)');
     }
-    const $html = `<h3>${isCorrect}</h3>`;
-    $div.html($html);
+
+    const $html = `<h3>${result}</h3>`;
+    $div.append($html);
     $('.result-container').append($div);
 }
 
@@ -156,5 +164,5 @@ function end_screen() {
 }
 
 $(() => {
-    end_screen();
+    welcome_screen();
 }); //end window onload
