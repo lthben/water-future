@@ -10,7 +10,8 @@ A webpage with an educational quiz to teach about water sustainability
 ## Approach taken 
 - Content based on actual live workshop done by me
 - Layout, Typography, Colours
-- Responsive design
+- Navigation: arrow keys, enter key, hamburger with side menu
+- Responsive design using Bootstrap
 - Gamification
 - Interactivity 
 - Animations

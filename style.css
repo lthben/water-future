@@ -1,8 +1,41 @@
+body  {
+    font-family: 'Open Sans', sans-serif;
+}
+
 div {
-    border: 1px solid gray;
-    background: lightcyan;
+    /* border: 1px solid gray; */
+    /* background: lightcyan; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 img {
     max-width: 800px;
+}
+
+.qnIndex {
+    font-size: smaller;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.qnTitle {
+    font-family: 'Roboto', sans-serif;
+    /* font-weight: bold; */
+    font-size: x-large;
+    margin-bottom: 2%;
+}
+
+.qnText {
+    margin-bottom: 3%;
+}
+
+.form-check {
+    padding: 1% 5%;
+    margin: 1% 1%;
+    background-color: azure;
+}
+
+#submit-button {
+    margin-top: 2%;
 }

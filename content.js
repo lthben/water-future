@@ -1,24 +1,27 @@
 const questions = [
     ` 
-    <b>Question 1</b><br />
-    ____ % of the world's water is freshwater.<br /> 
-    70 % of this is trapped in the ice caps of Antarctica and Greenland.<br />
-    As a result, only ____ % of the world's water is available for human use.
+    <div class="qnIndex">1/10</div>
+    <div class="qnTitle">Water, water everywhere, nor any drop to drink</div>
+    <div class="qnText">
+    <p>____ % of the world's water is freshwater.</p> 
+    <p>70 % of this is trapped in the ice caps of Antarctica and Greenland.</p>
+    <p>As a result, only ____ % of the world's water is available for human use.</p>
+    </div>
     `,`
-    <b>Question 2</b><br />
+    <p class="qnIndex">2/10</p>
     ____ is the process of water turning into water vapour by heat from the sun.<br /> 
     ____ is the process of water vapour mixing wh dust particles and various gases to form clouds high in the atmosphere where  is colder.<br /> 
     ____ is the process of clouds releasing their water content in the form of rain, hail or snow.<br />
     ____ is the process of plants and soil releasing water vapour into the air.
     `,`
-    <b>Question 3</b><br />
-    Agriculture uses ____ % of the world’s freshwater. 
+    <p><b>Question 3</b><br />
+    Agriculture uses ____ % of the world’s freshwater. </p>
     `,`
-    <b>Question 4</b><br />
-    Which place became the first major city in the world to almost hit Day Zero when it runs out of water? Hint: This happened in 2018. 
+    <p><b>Question 4</b><br />
+    Which place became the first major city in the world to almost hit Day Zero when it runs out of water? Hint: This happened in 2018. </p>
     `,`
-    <b>Question 5</b><br />
-    A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding. A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?
+    <p><b>Question 5</b><br />
+    A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding. A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?</p>
     <img src='./media/man-drops-iphone.jpeg' />
     `,`
     <b>Question 6</b><br />
@@ -42,10 +45,10 @@ const questions = [
 
 const options = [
     {  //Q1
-        A: "30 80",
-        B: "20 50",
-        C: "10 10",
-        D: "3.5 1"    
+        A: "&emsp; 30 &emsp; 80",
+        B: "&emsp; 20 &emsp; 50",
+        C: "&emsp; 10 &emsp; 10",
+        D: "&emsp; 3.5 &emsp; 1"    
     }, { //Q2 
         A: "Transpiration, Precipitation, Condensation, Evaporation",
         B: "Evaporation, Condensation, Precipitation, Transpiration",
@@ -119,7 +122,7 @@ const explanations = [
     `
     <p> An illustrated image of the water cycle. [Source: https://gpm.nasa.gov/resources/images/diagram-water-cycle]</p>
     <img src='./media/water-cycle.png' />
-    <p> Watch the first three minutes of the following video for a similar explanation. </p>
+    <p> Watch the following video for a similar explanation, from the beginning to the 02:34 minute mark. </p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ncORPosDrjI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     `,
     //Q3

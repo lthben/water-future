@@ -1,6 +1,5 @@
 'use strict'
 
-// const start = Date.now();
 let qnIndex = 0;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
@@ -15,7 +14,7 @@ function display_question() {
 
     for (const opt in _options) {
         const $html = `
-            <input class="form-check-input" type="radio" name="option" id="${opt}" value="${opt}">
+            <input class="form-check-input row" type="radio" name="option" id="${opt}" value="${opt}">
             <label class="form-check-label" for="${opt}">
             ${opt}: ${_options[opt]}
             </label>
