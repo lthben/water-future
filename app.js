@@ -90,13 +90,22 @@ function display_explanation() {
 function welcome_screen() {
 
     const $starthtml = `
+        <div id="mainTitle">
         <h1> The Future of our Water </h1>
-        <b> Learn about water sustainability </b><br />
-        <img src="./media/water-as-petroleum.png" /> <br />
-        <p>We will learn about why the above quote about water is true, via an interactive quiz of ${numQn} questions."</p>
-        <img src='./media/Goal 6/E_SDG_action_card_square_6.jpg' />
-        <p>This topic is closely related to the United Nations Sustainable Development Goal 6 'Clean Water and Sanitation'</p>
-        <button type="submit" class="btn btn-primary" id="next-button">Start</button>
+        <h4> Learn about water sustainability </h4>
+        </div>
+        <div class="row align-items-end">
+            <div class="col-6"><img src='./media/Goal 6/E_SDG_action_card_square_6.jpg' width="100%"/></div>
+            <div class="col-6">
+                <div class="row">
+                    <p>It is said that water is going to be the petroleum of the 21st century. The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
+                    <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. Learn more about this topic through this interactive quiz.</p>
+                </div>
+                <div class="row">
+                    <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Start</button></div>
+                </div>
+            </div>
+        </div>
     `
     $('.container').html($starthtml);
     $('#next-button').on('click', (e) => {

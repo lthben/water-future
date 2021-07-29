@@ -1,46 +1,72 @@
 const questions = [
     ` 
-    <div class="qnIndex">1/10</div>
-    <div class="qnTitle">Water, water everywhere, nor any drop to drink</div>
-    <div class="qnText">
+    <div id="qnIndex">1/10</div>
+    <div id="qnTitle">Water, water everywhere, nor any drop to drink</div>
+    <div id="qnText">
     <p>____ % of the world's water is freshwater.</p> 
     <p>70 % of this is trapped in the ice caps of Antarctica and Greenland.</p>
     <p>As a result, only ____ % of the world's water is available for human use.</p>
     </div>
     `,`
-    <p class="qnIndex">2/10</p>
-    ____ is the process of water turning into water vapour by heat from the sun.<br /> 
-    ____ is the process of water vapour mixing wh dust particles and various gases to form clouds high in the atmosphere where  is colder.<br /> 
-    ____ is the process of clouds releasing their water content in the form of rain, hail or snow.<br />
-    ____ is the process of plants and soil releasing water vapour into the air.
+    <p id="qnIndex">2/10</p>
+    <div id="qnTitle">The Water Cycle</div>
+    <div id="qnText">
+    <p>_____________ &emsp; is the process of water turning into water vapour by heat from the sun.</p>
+    <p>_____________ &emsp; is the process of water vapour mixing wh dust particles and various gases to form clouds high in the atmosphere where  is colder.</p>
+    <p>_____________ &emsp; is the process of clouds releasing their water content in the form of rain, hail or snow.</p>
+    <p>_____________ &emsp; is the process of plants and soil releasing water vapour into the air.</p>
+    </div>
     `,`
-    <p><b>Question 3</b><br />
-    Agriculture uses ____ % of the world’s freshwater. </p>
+    <p id="qnIndex">3/10</p>
+    <div id="qnText">
+    <div id="qnTitle">Water Usage in Agriculture</div>
+    <p>Agriculture uses ______ % of the world’s freshwater. </p>
+    </div>
     `,`
-    <p><b>Question 4</b><br />
-    Which place became the first major city in the world to almost hit Day Zero when it runs out of water? Hint: This happened in 2018. </p>
+    <p id="qnIndex">4/10</p>
+    <div id="qnTitle">The City that almost hit Day Zero</div>
+    <div id="qnText">
+    <p>Which major city almost ran out of water in 2018?</p>
+    </div>
     `,`
-    <p><b>Question 5</b><br />
-    A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding. A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?</p>
+    <p id="qnIndex">5/10</p>
+    <div id="qnTitle">The Case of the Missing Phone</div>
+    <div id="qnText">
+    <p>A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding. A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?</p>
     <img src='./media/man-drops-iphone.jpeg' />
+    </div>
     `,`
-    <b>Question 6</b><br />
-    According to the World Health Organization, ____ % of all diseases in the developing world are water related. <br />
-    By 2025, the United Nation estimates that ____ % of the world’s population residing in 50 countries will face water shortage.
+    <p id="qnIndex">6/10</p>
+    <div id="qnTitle">Water in Sanitation</div>
+    <div id="qnText">
+    <p>According to the World Health Organization, ______ % of all diseases in the developing world are water related. </p>
+    <p>By 2025, the United Nation estimates that ______ % of the world’s population residing in 50 countries will face water shortage.</p>
+    </div>
     `,`
-    <b>Question 7</b><br />
-    Of earth’s 37 major underground reservoirs, ____ are on track to be irreversibly emptied. 
+    <p id="qnIndex">7/10</p>
+    <div id="qnTitle">The Earth's Underground Aquifers</div>
+    <div id="qnText">
+    <p>Of earth’s 37 major underground reservoirs, ______ are on track to be irreversibly emptied.</p>
+    </div>
     `,`
-    <b>Question 8</b><br />
-    Regarding ways to conserve water, which statement is false?
+    <p id="qnIndex">8/10</p>
+    <div id="qnTitle">Water Conservation</div>
+    <div id="qnText">
+    <p>Regarding ways to conserve water, which statement is false?</p>
+    </div>
     `,`
-    <b>Question 9</b><br />
-    1 kg of wheat requires 1 litre of water to produce. In comparison, 400g of beef requires ____ litres of water to produce.
+    <p id="qnIndex">9/10</p>
+    <div id="qnTitle">Water's Beef with Beef</div>
+    <div id="qnText">
+    <p>1 kg of wheat requires 1 litre of water to produce. In comparison, 400g of beef requires ______ litres of water to produce.</p>
+    </div>
     `,`
-    <b>Question 10</b><br />
-    We  consume about ____ litres of water a day in hidden uses, such as the products we use and clothes we wear, but most especially in the food we eat.
+    <p id="qnIndex">10/10</p>
+    <div id="qnTitle">Hidden Water</div>
+    <div id="qnText">
+    <p>We  consume about ______ litres of water a day in hidden uses, such as the products we use and clothes we wear, but most especially in the food we eat.</p>
+    </div>
     `
-
 ];
 
 const options = [
@@ -50,50 +76,50 @@ const options = [
         C: "&emsp; 10 &emsp; 10",
         D: "&emsp; 3.5 &emsp; 1"    
     }, { //Q2 
-        A: "Transpiration, Precipitation, Condensation, Evaporation",
-        B: "Evaporation, Condensation, Precipitation, Transpiration",
-        C: "Condensation, Transpiration, Evaporation, Precipitation",
-        D: "Evaporation, Precipitation, Condensation, Transpiration"
+        A: "&emsp;Transpiration, &emsp;Precipitation, &emsp;Condensation, &emsp;Evaporation",
+        B: "&emsp;Evaporation, &emsp;Condensation, &emsp;Precipitation, &emsp;Transpiration",
+        C: "&emsp;Condensation, &emsp;Transpiration, &emsp;Evaporation, &emsp;Precipitation",
+        D: "&emsp;Evaporation, &emsp;Precipitation, &emsp;Condensation, &emsp;Transpiration"
     }, { //Q3
-        A: "10 - 30",
-        B: "30 - 50",
-        C: "50 - 70", 
-        D: "70 - 90"
+        A: "&emsp;10 - 30",
+        B: "&emsp;30 - 50",
+        C: "&emsp;50 - 70", 
+        D: "&emsp;70 - 90"
     }, { //Q4
-        A: "Cape Town, Africa",
-        B: "Manila, Philippines",
-        C: "Taipei, Taiwan",
-        D: "Bangkok, Thailand"
+        A: "&emsp;Cape Town, Africa",
+        B: "&emsp;Manila, Philippines",
+        C: "&emsp;Taipei, Taiwan",
+        D: "&emsp;Bangkok, Thailand"
     }, { //Q5    
-        A: "This is fake news",
-        B: "He hired a scuba diver to retrieve it for him",
-        C: "The lake dried up and someone found it back for him",
-        D: "A fisherman fished it out of the lake by luck"
+        A: "&emsp;This is fake news",
+        B: "&emsp;He hired a scuba diver to retrieve it for him",
+        C: "&emsp;The lake dried up and someone found it back for him",
+        D: "&emsp;A fisherman fished it out of the lake by luck"
     }, { //Q6
-        A: "10 2",
-        B: "30 5",
-        C: "50 10",
-        D: "80 30"
+        A: "&emsp;10 &emsp;2",
+        B: "&emsp;30 &emsp;5",
+        C: "&emsp;50 &emsp;10",
+        D: "&emsp;80 &emsp;30"
     }, { //Q7
-        A: "2",
-        B: "8",
-        C: "14",
-        D: "21"
+        A: "&emsp;2",
+        B: "&emsp;8",
+        C: "&emsp;14",
+        D: "&emsp;21"
     }, { //Q8
-        A: "Farmers adopting efficient irrigation methods in agriculture",
-        B: "Eating more meat and less fruit and vegetables",
-        C: "Industries reusing and recycling water",
-        D: "Reducing food waste since food takes a lot of water to produce"
+        A: "&emsp;Farmers adopting efficient irrigation methods in agriculture",
+        B: "&emsp;Eating more meat and less fruit and vegetables",
+        C: "&emsp;Industries reusing and recycling water",
+        D: "&emsp;Reducing food waste since food takes a lot of water to produce"
     }, { //Q9
-        A: "500",
-        B: "1000",
-        C: "2000",
-        D: "5000"
+        A: "&emsp;500",
+        B: "&emsp;1000",
+        C: "&emsp;2000",
+        D: "&emsp;5000"
     }, { //Q10
-        A: "100",
-        B: "500",
-        C: "1000",
-        D: "3000"
+        A: "&emsp;100",
+        B: "&emsp;500",
+        C: "&emsp;1000",
+        D: "&emsp;3000"
     }
 ];
 
