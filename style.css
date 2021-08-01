@@ -15,6 +15,10 @@ img {
     margin: 1% 0;
 }
 
+#est-text {
+    color: rgba(128,128,128,255);
+}
+
 #mainTitle {
     margin: 5% 0 2% 0;
 }
