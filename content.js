@@ -49,7 +49,7 @@ const questions = [
     </div>
     `,`
     <p id="qnIndex">7 / 10</p>
-    <div id="qnTitle">The Earth's Underground Aquifers</div>
+    <div id="qnTitle">The Earth's Underground Water</div>
     <div id="qnText">
     <p>Of earth’s 37 major underground reservoirs, ______ are on track to be irreversibly emptied.</p>
     </div>

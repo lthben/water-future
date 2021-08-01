@@ -122,11 +122,12 @@ function welcome_screen() {
             <div class="col-lg-6"><img class="constrain-image" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
             <div class="col-lg-6">
                 <div class="row horz-centre-text pad-top">
+                    <p><i>This free e-learning module is done as part of a school project. Enjoy!<br /><br /></i></p>
                     <p>It is said that water is going to be the petroleum of the 21st century.</p> 
                     <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
                     <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
                     <p>Learn more about this topic through this interactive quiz.</p>
-                    <p id="est-text"><br />Estimated time: 30 - 45min<p>
+                    <p id="est-text"><br />Estimated time to complete: 15 - 30min<p>
                 </div>
                 <div class="row">
                     <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Start</button></div>
