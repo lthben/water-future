@@ -1,6 +1,6 @@
 'use strict'
 
-let qnIndex = 0;
+let qnIndex = 9;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
 let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection
@@ -35,7 +35,6 @@ function display_question() {
 
     $('#submit-button').on('click', (e) => {
         e.preventDefault();
-        $('.result-container').children().remove();
         setTimeout(() => {
             eval_user_sel();
         }, 300);
@@ -49,7 +48,7 @@ function eval_user_sel() {
     $div.attr('id', 'result');
 
     $(wrongOptionDivSelected).css('background-color', 'azure');
-    $(wrongOptionDivSelected).css('border', 'none');
+    $(wrongOptionDivSelected).css('border', '1px solid azure');
     $("#" + wrongOptionID).next().html(wrongLabelText);
 
     let optionSelected = $('input:checked').val();
@@ -63,9 +62,12 @@ function eval_user_sel() {
         result = "&check;";
         $(':input[type="submit"]').prop('disabled', true);
         $(':input[type="radio"]').prop('disabled', true);
+        $('.button-div').remove();
+
         display_explanation();
+        
         if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(true);
-        $(divIDname).css('border', '2px solid green');
+        $(divIDname).css('border', '1px solid green');
         $(divIDname).css('background-color', 'rgba(0,128,0,0.05)');
     }
     else {
@@ -74,7 +76,7 @@ function eval_user_sel() {
         wrongOptionID = optionSelected;
         if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(false);
         result = "&cross;";
-        $(divIDname).css('border', '2px solid red');
+        $(divIDname).css('border', '1px solid red');
         $(divIDname).css('background-color', 'rgba(128,0,0,0.05)');
     }
 
@@ -82,10 +84,8 @@ function eval_user_sel() {
 }
 
 function display_explanation() {
-    const $div = $('<div>');
     const $html = explanations[qnIndex];
-    $div.html($html);
-    $('.explanation-container').append($div);
+    $('.explanation-container').html($html);
 
     const $buttondiv = $('<div>').addClass('button-div');
     const $buttonhtml = `<button type="submit" class="btn btn-primary" id="next-button">Next</button>`;
@@ -119,11 +119,12 @@ function welcome_screen() {
         <h4> Learn about water sustainability </h4>
         </div>
         <div class="row align-items-center">
-            <div class="col-6"><img src='./media/Goal 6/E_SDG_action_card_square_6.jpg' width="100%"/></div>
-            <div class="col-6">
+            <div class="col-lg-6"><img class="constrain-image" src='./media/Goal 6/E_SDG_action_card_square_6.jpg'/></div>
+            <div class="col-lg-6">
                 <div class="row horz-centre-text">
                     <p>It is said that water is going to be the petroleum of the 21st century. The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
-                    <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. Learn more about this topic through this interactive quiz.</p>
+                    <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
+                    <p>Learn more about this topic through this interactive quiz.</p>
                 </div>
                 <div class="row">
                     <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Start</button></div>
@@ -139,8 +140,7 @@ function welcome_screen() {
         const $html = `
             <div class="question-container"></div>
             <div class="options-container"></div>
-            <div class="result-container"></div>
-            <div class="explanation-container"></div>
+            <div class="explanation-container row"></div>
         `
         $('.container').html($html);
 
@@ -158,8 +158,8 @@ function end_screen() {
         <h4> Hope you learnt something interesting!</h4>
         </div>
         <div class="row align-items-center">
-            <div class="col-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            <div class="col-6">
+            <div class="col-lg-6"><iframe width="100%" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="col-lg-6">
                 <div class="row horz-centre-text">
                     <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
                     <p>This 18 minute video is a highly recommended watch about this topic.</p>
