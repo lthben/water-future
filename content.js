@@ -35,7 +35,7 @@ const questions = [
         <div class="col-lg-8">
             <img class="constrain-image" src='./media/man-drops-iphone.jpeg' />
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 pad-top">
             <p>A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding.</p> 
             <p>A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?</p>
         </div>
@@ -144,10 +144,10 @@ const answers = [
 const explanations = [
     //Q1
     `
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <iframe src="https://www.youtube.com/embed/oaQCiwzjnCM" width="100%" height="315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <p> Fresh water is a renewable resource, yet the world's supply of clean, fresh water is under increasing demand for human activities. The world has an estimated 1.34 billion cubic kilometers of water, but 96.5% of  is salty. Almost 70% of freshwater can be found in the ice caps of Antarctica and Greenland.</p>
         <p> Less than 1% of this water on Earth is accessible to humans, the rest is contained in soil moisture or deep underground. Accessible freshwater is located in lakes, rivers, reservoirs and shallow underground sources. Rainwater and snowfall do very little to replenish many underground source. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
         <p> Watch the first three minutes of the following video for a similar explanation. </p>
@@ -155,45 +155,46 @@ const explanations = [
     `,
     //Q2
     `
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <p> An illustrated image of the water cycle. <a href="https://gpm.nasa.gov/resources/images/diagram-water-cycle">[Source]</a></p>
         <img class="constrain-image" src='./media/water-cycle.png' />
     </div> 
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <p> Watch the following video for a similar explanation, from the beginning to the 02:34 minute mark. </p>
         <iframe width="100%" height="315" src="https://www.youtube.com/embed/ncORPosDrjI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     `,
     //Q3
     `
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <img class="constrain-image" src='./media/where-the-water-goes-most.png' />
     </div>
-    <div class="col-lg-6">
-        <p>Yup, agriculture is the biggest culprit when it comes to global water use. That's why it is so important to find efficient means and ways of conserving water in agriculture, such as ensuring pipes do not leak, recycling greywater, using a closed-loop irrigation system etc.</p>
+    <div class="col-lg-6 pad-top">
+        <p>Yup, agriculture is the biggest culprit when it comes to global water use.</p>
+        <p>That's why it is so important to find efficient means and ways of conserving water in agriculture, such as ensuring pipes do not leak, recycling greywater, using a closed-loop irrigation system etc.</p>
     </div>
     `,
     //Q4
     `
-    <div class="col-lg-4">
+    <div class="col-lg-4 pad-top">
         <img class="constrain-image" src='./media/cape-town.jpeg' />
         <p class="horz-centre-text"> <br/>For Cape Town, Day Zero hasn’t disappeared, it’s merely been delayed. The catastrophic shortage that nearly turned off its faucets was narrowly averted in 2018 with strict water rationing measures.</p>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-8 pad-top">
         <img class="constrain-image"  src='./media/global-water-use.png' />
         <p class="horz-centre-text"> <br/>Note the 7-fold increase in over just one century. </p>
     </div>
-    <div class="row">
+    <div class="row pad-top">
         <img class="constrain-image" src='./media/water-stressed-countries.png' />
         <p class="horz-centre-text"> <br/>A map of predicted water-stressed countries in 2040 </p>
     </div> 
     `,
     //Q5
     `
-    <div class="col-xl-8">
+    <div class="col-xl-8 pad-top">
         <img class="constrain-image" src='./media/sun-moon-lake-dry.jpeg' />
     </div>
-    <div class="col-xl-4">
+    <div class="col-xl-4 pad-top">
         <p> It's not fake news! Thanks to the waterproof case and the fact that the entire lake lost almost all its water due to drought in most of 2020. The man was lucky that the person who picked it up while walking across the dried bed of the lake turned it on and managed to trace the owner.See the 'before' and 'after' image of the drought-stricken lake below. </p>
         <p>Experts believe that Taiwan's water problems have been slowly building as a result of poor handling of its water resources. Despite the island experiencing 2.6 times the amount of the world's average annual rainfall, inadequate planning and an ignorance of water recycling have led to the current crisis.</p>
         <p>One water expert named Lee Hong-yuan explained that Taiwan's agriculture industry utilizes about 70 percent of the country's water supply, but outdated irrigation channels have caused plenty of waste, with almost half of the water being transported being lost to leaks, and a quarter being lost to evaporation during transportation. <a href="https://sea.mashable.com/tech/15242/man-drops-iphone-in-lake-gets-it-back-one-year-later-in-full-working-condition"[Source]</a></p>
@@ -201,27 +202,27 @@ const explanations = [
     `,
     //Q6
     `
-    <p>These statistics show the importance of access to clean freshwater for sanitation and disease prevention, and the rising trend of water stress in the world.</p>
+    <p class="pad-top">These statistics show the importance of access to clean freshwater for sanitation and disease prevention, and the rising trend of water stress in the world.</p>
     `,
     //Q7
     `
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <iframe width="100%" height="315" src="https://www.youtube.com/embed/OCzYdNSJF-k?start=122" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <p>This illustrates the concept of peak non-renewable water, where groundwater aquifers are being overpumped (or contaminated) faster than nature recharges them (this example is most like the peak oil debate).</p>
         <p>Ultimately, peak water is not about running out of freshwater, but about reaching physical, economic, and environmental limits on meeting human demands for water and the subsequent decline of water availability and use. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
         <p>Watch the following video from 02:02 to the 04:43 minute mark to learn about whether we are running out of clean water.</p>
-        <p>tldr: the total amount of water in the world is constant due to the water cycle but whether the water is available for human use is another matter entirely.</p>
+        <p>TLDR: the total amount of water in the world is constant due to the water cycle but whether the water is available for human use is another matter entirely.</p>
     </div>
     `,
     //Q8
     `
-    <p>This is a give-away question. Answer is self-explanatory. Eat less meat and more fruit and vegetables to conserve water!</p>
+    <p class="pad-top">This is a give-away question. Answer is self-explanatory. Eat less meat and more fruit and vegetables to conserve water!</p>
     `,
     //Q9
     `
-    <div class="col-lg-6">
+    <div class="col-lg-6 pad-top">
         <p>Why does beef take so much water to produce? Answer: To simplify, let’s look at Beef. Did you know that the juicy steak you love to eat uses up 15,400 liters of water for every 1 kilo? How? </p>
         <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned, the cow needs to drink – all of these adds up to 3,091,000 liters of water! </p>
         <p>All of that water just to make an innocent looking but delicious steak.</p>
@@ -229,17 +230,17 @@ const explanations = [
     `,
     //Q10
     `
-    <div class="row">
+    <div class="row pad-top">
         <p>This is the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
     <div class="row">
-        <div class="col-xl-4">    
+        <div class="col-xl-4 pad-top">    
             <img class="constrain-image" src='./media/cocacola-25l.png' />
         </div>
-        <div class="col-xl-4">
+        <div class="col-xl-4 pad-top">
             <img class="constrain-image" src='./media/tshirt-2500l.png' />
         </div>
-        <div class="col-xl-4">
+        <div class="col-xl-4 pad-top">
             <img class="constrain-image" src='./media/hamburger-15000l.png' />
         </div>
     </div>

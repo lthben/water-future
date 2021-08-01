@@ -1,21 +1,21 @@
 ![](./media/quote-banner.jpg)
 
 # About
-A webpage with an educational quiz to teach about water sustainability
+An interactive quiz to test your knowledge and learn about water sustainability.
 
 ## Explanations of the technologies used
-- Bootstrap
 - DOM manipulation 
+- Bootstrap
 
 ## Approach taken 
 - Content based on actual live workshop done by me
 - Layout, Typography, Colours
 - Responsive design using Bootstrap
-- Carousell for images
 - Navigation: arrow keys, enter key, hamburger with side menu
-- Gamification
-- Interactivity 
+- Top overlay with logo and author credits
 - Animations (Animista)
+- Gamification?
+- Interactivity?
 
 ## Link to live site
 https://pages.git.generalassemb.ly/lthben/water-future/

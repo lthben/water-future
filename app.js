@@ -1,6 +1,6 @@
 'use strict'
 
-let qnIndex = 0;
+let qnIndex = 4;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
 let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection
@@ -118,11 +118,12 @@ function welcome_screen() {
         <h1> The Future of our Water </h1>
         <h4> Learn about water sustainability </h4>
         </div>
-        <div class="row align-items-center">
+        <div class="row align-items-center pad-top">
             <div class="col-lg-6"><img class="constrain-image" src='./media/Goal 6/E_SDG_action_card_square_6.jpg'/></div>
             <div class="col-lg-6">
-                <div class="row horz-centre-text">
-                    <p>It is said that water is going to be the petroleum of the 21st century. The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
+                <div class="row horz-centre-text pad-top">
+                    <p>It is said that water is going to be the petroleum of the 21st century.</p> 
+                    <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
                     <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
                     <p>Learn more about this topic through this interactive quiz.</p>
                 </div>
@@ -160,9 +161,9 @@ function end_screen() {
         <div class="row align-items-center">
             <div class="col-lg-6"><iframe width="100%" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             <div class="col-lg-6">
-                <div class="row horz-centre-text">
+                <div class="row horz-centre-text pad-top">
                     <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
-                    <p>This 18 minute video is a highly recommended watch about this topic.</p>
+                    <p>This 18 minute video "World's Water Crisis", is a highly recommended watch about this topic.</p>
                 </div>
                 <div class="row">
                     <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Retake quiz</button></div>
