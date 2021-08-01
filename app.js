@@ -1,6 +1,6 @@
 'use strict'
 
-let qnIndex = 9;
+let qnIndex = 0;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
 let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection

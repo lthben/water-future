@@ -233,13 +233,13 @@ const explanations = [
         <p>This is the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
     <div class="row">
-        <div class="col-lg-4">    
+        <div class="col-xl-4">    
             <img class="constrain-image" src='./media/cocacola-25l.png' />
         </div>
-        <div class="col-lg-4">
+        <div class="col-xl-4">
             <img class="constrain-image" src='./media/tshirt-2500l.png' />
         </div>
-        <div class="col-lg-4">
+        <div class="col-xl-4">
             <img class="constrain-image" src='./media/hamburger-15000l.png' />
         </div>
     </div>
