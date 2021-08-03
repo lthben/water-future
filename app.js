@@ -160,8 +160,8 @@ function end_screen() {
         <h4> Hope you learnt something interesting!</h4>
         </div>
         <div class="row align-items-center pad-top">
-            <div class="col-lg-6"><iframe width="100%" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            <div class="col-lg-6">
+            <div class="col-xl-6"><iframe width="100%" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="col-xl-6">
                 <div class="row horz-centre-text pad-top">
                     <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
                     <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
