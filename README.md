@@ -11,7 +11,7 @@ An interactive quiz to test your knowledge and learn about water sustainability.
 - Content based on actual live workshop done by me
 - Layout, Typography, Colours
 - Responsive design using Bootstrap
-- UX desigm as per GA course website quiz: 
+- UX design as per GA course website quiz: 
     - Navigation: arrow keys, enter key, hamburger with side menu
     - Progress bar
     - Top overlay with logo and author credits

@@ -1,6 +1,6 @@
 'use strict'
 
-let qnIndex = 9;
+let qnIndex = 1;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
 let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection
@@ -122,21 +122,20 @@ function welcome_screen() {
             <div class="col-lg-6"><img class="constrain-image" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
             <div class="col-lg-6">
                 <div class="row horz-centre-text pad-top">
-                    <p id="est-text">This free e-learning module is done as part of a school project. Enjoy!</p>
                     <p>It is said that water is going to be the petroleum of the 21st century.</p> 
                     <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
                     <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
                     <p>Learn more about this topic through this interactive quiz.</p>
-                    <p id="est-text">Estimated time to complete: 15 - 30min<p>
+                    <p id="est-text"><br />Estimated time to complete: 15 - 30min<p>
                 </div>
                 <div class="row">
-                    <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Start</button></div>
+                    <div id="start-button"><button type="submit" class="btn btn-primary" id="start-button">Start</button></div>
                 </div>
             </div>
         </div>
     `
     $('.content').html($starthtml);
-    $('#next-button').on('click', (e) => {
+    $('#start-button').on('click', (e) => {
         e.preventDefault();
         $('.content').children().remove();
 
@@ -165,16 +164,16 @@ function end_screen() {
             <div class="col-lg-6">
                 <div class="row horz-centre-text pad-top">
                     <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
-                    <p>This 18 minute video "World's Water Crisis", is a highly recommended watch about this topic.</p>
+                    <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
                 </div>
                 <div class="row">
-                    <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Retake quiz</button></div>
+                    <div id="start-button"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button></div>
                 </div>
             </div>
         </div>
     `
     $('.content').html($endhtml);
-    $('#next-button').on('click', (e) => {
+    $('#start-button').on('click', (e) => {
         e.preventDefault();
         qnIndex = 0;
         isFirstTryCorrect = [];
