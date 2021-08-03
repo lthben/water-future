@@ -1,6 +1,6 @@
 'use strict'
 
-let qnIndex = 0;
+let qnIndex = 9;
 const numQn = answers.length;
 let isFirstTryCorrect = [];
 let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection
@@ -94,7 +94,7 @@ function display_explanation() {
 
     $('#next-button').on('click', (e) => {
         e.preventDefault();
-        $('.container').children().children().remove();
+        $('.content').children().children().remove();
 
         wrongOptionDivSelected = null; 
         wrongLabelText = null;
@@ -114,7 +114,7 @@ function display_explanation() {
 function welcome_screen() {
 
     const $starthtml = `
-        <div id="mainTitle">
+        <div id="mainTitle" class="pad-top">
         <h1> The Future of our Water </h1>
         <h4> Learn about water sustainability </h4>
         </div>
@@ -122,12 +122,12 @@ function welcome_screen() {
             <div class="col-lg-6"><img class="constrain-image" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
             <div class="col-lg-6">
                 <div class="row horz-centre-text pad-top">
-                    <p><i>This free e-learning module is done as part of a school project. Enjoy!<br /><br /></i></p>
+                    <p id="est-text">This free e-learning module is done as part of a school project. Enjoy!</p>
                     <p>It is said that water is going to be the petroleum of the 21st century.</p> 
                     <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
                     <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
                     <p>Learn more about this topic through this interactive quiz.</p>
-                    <p id="est-text"><br />Estimated time to complete: 15 - 30min<p>
+                    <p id="est-text">Estimated time to complete: 15 - 30min<p>
                 </div>
                 <div class="row">
                     <div id="start-button"><button type="submit" class="btn btn-primary" id="next-button">Start</button></div>
@@ -135,17 +135,17 @@ function welcome_screen() {
             </div>
         </div>
     `
-    $('.container').html($starthtml);
+    $('.content').html($starthtml);
     $('#next-button').on('click', (e) => {
         e.preventDefault();
-        $('.container').children().remove();
+        $('.content').children().remove();
 
         const $html = `
             <div class="question-container"></div>
             <div class="options-container"></div>
             <div class="explanation-container row"></div>
         `
-        $('.container').html($html);
+        $('.content').html($html);
 
         display_question();
     });
@@ -156,11 +156,11 @@ function end_screen() {
     const score = isFirstTryCorrect.filter(x => x === true).length;
 
     const $endhtml = `
-        <div id="mainTitle">
+        <div id="mainTitle" class="pad-top">
         <h1> You have completed this quiz.</h1>
         <h4> Hope you learnt something interesting!</h4>
         </div>
-        <div class="row align-items-center">
+        <div class="row align-items-center pad-top">
             <div class="col-lg-6"><iframe width="100%" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             <div class="col-lg-6">
                 <div class="row horz-centre-text pad-top">
@@ -173,7 +173,7 @@ function end_screen() {
             </div>
         </div>
     `
-    $('.container').html($endhtml);
+    $('.content').html($endhtml);
     $('#next-button').on('click', (e) => {
         e.preventDefault();
         qnIndex = 0;

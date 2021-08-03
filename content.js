@@ -191,10 +191,10 @@ const explanations = [
     `,
     //Q5
     `
-    <div class="col-xl-8 pad-top">
+    <div class="col-lg-8 pad-top">
         <img class="constrain-image" src='./media/sun-moon-lake-dry.jpeg' />
     </div>
-    <div class="col-xl-4 pad-top">
+    <div class="col-lg-4 pad-top">
         <p> It's not fake news! Thanks to the waterproof case and the fact that the entire lake lost almost all its water due to drought in most of 2020. The man was lucky that the person who picked it up while walking across the dried bed of the lake turned it on and managed to trace the owner.See the 'before' and 'after' image of the drought-stricken lake below. </p>
         <p>Experts believe that Taiwan's water problems have been slowly building as a result of poor handling of its water resources. Despite the island experiencing 2.6 times the amount of the world's average annual rainfall, inadequate planning and an ignorance of water recycling have led to the current crisis.</p>
         <p>One water expert named Lee Hong-yuan explained that Taiwan's agriculture industry utilizes about 70 percent of the country's water supply, but outdated irrigation channels have caused plenty of waste, with almost half of the water being transported being lost to leaks, and a quarter being lost to evaporation during transportation. <a href="https://sea.mashable.com/tech/15242/man-drops-iphone-in-lake-gets-it-back-one-year-later-in-full-working-condition"[Source]</a></p>
@@ -231,7 +231,7 @@ const explanations = [
     //Q10
     `
     <div class="row pad-top">
-        <p>This is the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
+        <p>Some examples of the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
     <div class="row">
         <div class="col-xl-4 pad-top">    
