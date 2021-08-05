@@ -1,125 +1,149 @@
-'use strict'
+"use strict";
 
-let qnIndex = 1;
+let qnIndex = 0;
 const numQn = answers.length;
-let isFirstTryCorrect = [];
-let wrongOptionDivSelected = null; //DOM handle to reset the previous wrong selection
-let wrongLabelText = null;
-let wrongOptionID = null;
+let isFirstTryCorrect = []; //score tracking
+let userOptionSelections = []; //user selections tracking
+const optionsArr = ["A", "B", "C", "D"]; //for the up down arrow keys tracking
+let optionCheckedIndex = 0; //for the up down arrow keys tracking
+let screens = {
+  welcomeScreen: 0,
+  questionScreen: 1,
+  explanationScreen: 2,
+  endScreen: 3,
+};
+let screen = screens.welcomeScreen;
 
 function display_question() {
+  screen = screens.questionScreen;
 
-    const $qndiv = $('<div>').addClass('qn-div').html(questions[qnIndex]);
-    $('.question-container').append($qndiv);
+  $(".content").children().remove();
 
-    const _options = options[qnIndex]; //object containing one set of answer options pertaining to a question in key:value pairs
-    const $form = $('<form>');
+  const $html = `
+            <div class="question-container"></div>
+            <div class="options-container"></div>
+            <div class="explanation-container row"></div>
+        `;
+  $(".content").html($html);
 
-    for (const opt in _options) {
-        const $html = `
-            <input class="form-check-input row" type="radio" name="option" id="${opt}" value="${opt}">
+  const $qndiv = $("<div>").addClass("qn-div").html(questions[qnIndex]);
+  $(".question-container").append($qndiv);
+
+  const _options = options[qnIndex]; //object containing one set of answer options pertaining to a question in key:value pairs
+  const $form = $("<form>");
+
+  for (const opt in _options) {
+    const $html = `
             <label class="form-check-label" for="${opt}">
+              <input class="form-check-input row" type="radio" name="option" id="${opt}" value="${opt}">
             ${opt}: ${_options[opt]}
             </label>
             `;
-        const idName = `option${opt}`;
-        const $div = $('<div>').addClass('form-check').attr('id', idName).html($html);
-        $form.append($div);
-    }
+    const idName = `option${opt}`;
+    const $div = $("<div>")
+      .addClass("form-check")
+      .attr("id", idName)
+      .html($html);
+    $form.append($div);
+  }
 
-    const $buttondiv = $('<div>').addClass('button-div');
-    const $buttonhtml = `<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>`;
-    $buttondiv.html($buttonhtml);
-    $form.append($buttondiv);
-    $('.options-container').append($form);
+  const $buttondiv = $("<div>").addClass("button-div");
+  const $buttonhtml = `<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>`;
+  $buttondiv.html($buttonhtml);
+  $form.append($buttondiv);
+  $(".options-container").append($form);
+  $("#A").prop("checked", true); //option A is checked by default
+  $("#A").focus();
+  optionCheckedIndex = 0;
 
-    $('#submit-button').on('click', (e) => {
-        e.preventDefault();
-        setTimeout(() => {
-            eval_user_sel();
-        }, 300);
-    });
+  $("#submit-button").on("click", (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      eval_user_sel();
+    }, 300);
+  });
+
+  if (qnIndex <= userOptionSelections.length - 1) {
+    //scroll back event to a previously completed question
+    let optionChecked = userOptionSelections[qnIndex];
+    $("#" + optionChecked).prop("checked", true);
+    $("#" + optionChecked).focus();
+    eval_user_sel();
+  }
 }
 
 function eval_user_sel() {
+  $(':input[type="submit"]').prop("disabled", true);
+  $(':input[type="radio"]').prop("disabled", true);
+  $(".button-div").remove();
 
-    let result = "";
-    const $div = $('<div>');
-    $div.attr('id', 'result');
+  let optionSelected = $("input:checked").val();
+  if (userOptionSelections.length <= qnIndex)
+    userOptionSelections.push(optionSelected);
+  let divIDname = "";
+  let result = "";
 
-    $(wrongOptionDivSelected).css('background-color', 'azure');
-    $(wrongOptionDivSelected).css('border', '1px solid azure');
-    $("#" + wrongOptionID).next().html(wrongLabelText);
+  if (optionSelected !== answers[qnIndex]) {
+    if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(false);
 
-    let optionSelected = $('input:checked').val();
-    let divIDname = `#option${optionSelected}`;
-    let labelText = $("label[for='" + optionSelected + "']").text();
-    console.log(labelText);
+    divIDname = `#option${optionSelected}`;
+    result = "&emsp;&emsp;&cross;";
+    $(divIDname).css("border", "1px solid red");
+    $(divIDname).css("background-color", "rgba(128,0,0,0.05)");
+    $("label[for='" + optionSelected + "']").append(result);
+    // console.log("wrong");
+  } else {
+    if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(true);
+  }
 
-    // console.log($("input:checked").val());
+  optionSelected = answers[qnIndex];
+  divIDname = `#option${optionSelected}`;
 
-    if (optionSelected === answers[qnIndex]) {
-        result = "&check;";
-        $(':input[type="submit"]').prop('disabled', true);
-        $(':input[type="radio"]').prop('disabled', true);
-        $('.button-div').remove();
+  result = "&emsp;&emsp;&check;";
+  $(divIDname).css("border", "1px solid green");
+  $(divIDname).css("background-color", "rgba(0,128,0,0.05)");
+  $("label[for='" + optionSelected + "']").append(result);
+  // console.log("Correct");
 
-        display_explanation();
-        
-        if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(true);
-        $(divIDname).css('border', '1px solid green');
-        $(divIDname).css('background-color', 'rgba(0,128,0,0.05)');
-    }
-    else {
-        wrongOptionDivSelected = divIDname;
-        wrongLabelText = labelText;
-        wrongOptionID = optionSelected;
-        if (isFirstTryCorrect.length <= qnIndex) isFirstTryCorrect.push(false);
-        result = "&cross;";
-        $(divIDname).css('border', '1px solid red');
-        $(divIDname).css('background-color', 'rgba(128,0,0,0.05)');
-    }
-
-    $("#" + optionSelected).next().html(labelText + "&emsp;" + result);
+  display_explanation();
 }
 
 function display_explanation() {
-    const $html = explanations[qnIndex];
-    $('.explanation-container').html($html);
+  screen = screens.explanationScreen;
 
-    const $buttondiv = $('<div>').addClass('button-div');
-    const $buttonhtml = `<button type="submit" class="btn btn-primary" id="next-button">Next</button>`;
-    $buttondiv.html($buttonhtml);
-    $('.explanation-container').append($buttondiv);
+  const $html = explanations[qnIndex];
+  $(".explanation-container").html($html);
 
-    $('#next-button').on('click', (e) => {
-        e.preventDefault();
-        $('.content').children().children().remove();
+  const $buttondiv = $("<div>").addClass("button-div");
+  const $buttonhtml = `<button type="submit" class="btn btn-primary" id="next-button">Next</button>`;
+  $buttondiv.html($buttonhtml);
+  $(".explanation-container").append($buttondiv);
 
-        wrongOptionDivSelected = null; 
-        wrongLabelText = null;
-        wrongOptionID = null;
+  $("#next-button").on("click", (e) => {
+    e.preventDefault();
+    $(".content").children().children().remove();
 
-        qnIndex++;
-        if (qnIndex === numQn) {
-            end_screen();
-        } else {
-            setTimeout(() => {
-                display_question();
-            }, 300);
-        }
-    });
+    qnIndex++;
+    if (qnIndex === numQn) {
+      end_screen();
+    } else {
+      setTimeout(() => {
+        display_question();
+      }, 300);
+    }
+  });
 }
 
 function welcome_screen() {
+  screen = screens.welcomeScreen;
 
-    const $starthtml = `
+  const $starthtml = `
         <div id="mainTitle" class="pad-top">
         <h1> The Future of our Water </h1>
         <h4> Learn about water sustainability </h4>
         </div>
         <div class="row align-items-center pad-top">
-            <div class="col-lg-6"><img class="constrain-image" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
+            <div class="col-lg-6"><img class="constrain-image constrain-image-small" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
             <div class="col-lg-6">
                 <div class="row horz-centre-text pad-top">
                     <p>It is said that water is going to be the petroleum of the 21st century.</p> 
@@ -133,34 +157,27 @@ function welcome_screen() {
                 </div>
             </div>
         </div>
-    `
-    $('.content').html($starthtml);
-    $('#start-button').on('click', (e) => {
-        e.preventDefault();
-        $('.content').children().remove();
+    `;
+  $(".content").html($starthtml);
 
-        const $html = `
-            <div class="question-container"></div>
-            <div class="options-container"></div>
-            <div class="explanation-container row"></div>
-        `
-        $('.content').html($html);
-
-        display_question();
-    });
+  $("#start-button").on("click", (e) => {
+    e.preventDefault();
+    display_question();
+  });
 }
 
 function end_screen() {
+  screen = screens.endScreen;
 
-    const score = isFirstTryCorrect.filter(x => x === true).length;
+  const score = isFirstTryCorrect.filter((x) => x === true).length;
 
-    const $endhtml = `
+  const $endhtml = `
         <div id="mainTitle" class="pad-top">
         <h1> You have completed this quiz.</h1>
         <h4> Hope you learnt something interesting!</h4>
         </div>
         <div class="row align-items-center pad-top">
-            <div class="col-xl-6"><iframe width="100%" height="315" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="col-xl-6"><iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             <div class="col-xl-6">
                 <div class="row horz-centre-text pad-top">
                     <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
@@ -171,16 +188,95 @@ function end_screen() {
                 </div>
             </div>
         </div>
-    `
-    $('.content').html($endhtml);
-    $('#start-button').on('click', (e) => {
-        e.preventDefault();
-        qnIndex = 0;
-        isFirstTryCorrect = [];
-        welcome_screen();
-    });
+    `;
+  $(".content").html($endhtml);
+  $("#start-button").on("click", (e) => {
+    e.preventDefault();
+    qnIndex = 0;
+    isFirstTryCorrect = [];
+    userOptionSelections = [];
+    welcome_screen();
+  });
+}
+
+function updown_keypress_handler(keyID) {
+  if (screen === screens.questionScreen) {
+    if (keyID === 40) {
+      //down
+      optionCheckedIndex++;
+      if (optionCheckedIndex === optionsArr.length) optionCheckedIndex = 0;
+    } else if (keyID === 38) {
+      //up
+      optionCheckedIndex--;
+      if (optionCheckedIndex === -1) optionCheckedIndex = optionsArr.length - 1;
+    }
+
+    let optionChecked = optionsArr[optionCheckedIndex];
+    // console.log("optionChecked", optionChecked);
+    $("#" + optionChecked).prop("checked", true);
+    $("#" + optionChecked).focus();
+  } else {
+    if (keyID === 40) {
+      //down
+      window.scrollBy(0, 100);
+    } else if (keyID === 38) {
+      //up
+      window.scrollBy(0, -100);
+    }
+  }
+}
+
+function leftright_keypress_handler(keyID) {
+  if (keyID === 37) {
+    qnIndex--;
+    if (qnIndex === -1) {
+      qnIndex = 0;
+    } else {
+      display_question();
+    }
+  } else if (keyID == 39) {
+    qnIndex++;
+    if (qnIndex === numQn) {
+      end_screen();
+    } else {
+      display_question();
+    }
+  }
+  console.log("qnIndex", qnIndex);
 }
 
 $(() => {
-    welcome_screen();
+  welcome_screen();
+
+  $(document).on("keydown", (e) => {
+    //use keydown instead of keypress
+    e.preventDefault(); //prevents screen from auto-refreshing which causes the button to be submitted twice
+    // console.log("e.which", e.which);
+
+    if (e.which === 38 || e.which === 40) {
+      updown_keypress_handler(e.which);
+    }
+
+    if (screen === screens.welcomeScreen || screen === screens.endScreen) {
+      if (e.which === 13) {
+        $("#start-button").click();
+      }
+    } else if (screen === screens.questionScreen) {
+      switch (e.which) {
+        case 13:
+          $("#submit-button").click();
+          break;
+      }
+    } else if (screen === screens.explanationScreen) {
+      switch (e.which) {
+        case 13:
+          $("#next-button").click();
+          break;
+        case 37:
+        case 39: //left, right
+          leftright_keypress_handler(e.which);
+          break;
+      }
+    }
+  });
 }); //end window onload
