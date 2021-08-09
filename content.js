@@ -13,7 +13,7 @@ const questions = [
     <div id="qnTitle">The Water Cycle</div>
     <div id="qnText">
     <p>_____________ &emsp; is the process of water turning into water vapour by heat from the sun.</p>
-    <p>_____________ &emsp; is the process of water vapour mixing wh dust particles and various gases to form clouds high in the atmosphere where  is colder.</p>
+    <p>_____________ &emsp; is the process of water vapour mixing with dust particles and various gases to form clouds high in the atmosphere where  is colder.</p>
     <p>_____________ &emsp; is the process of clouds releasing their water content in the form of rain, hail or snow.</p>
     <p>_____________ &emsp; is the process of plants and soil releasing water vapour into the air.</p>
     </div>
@@ -36,10 +36,10 @@ const questions = [
     <p id="qnIndex">5 / 10</p>
     <div id="qnTitle">The Case of the Missing Phone</div>
     <div id="qnText" class="row">
-        <div class="col-lg-8">
+        <div class="col-md-8">
             <img class="constrain-image" src='./media/man-drops-iphone.jpeg' />
         </div>
-        <div class="col-lg-4 pad-top">
+        <div class="col-md-4 pad-top">
             <p>A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding.</p> 
             <p>A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?</p>
         </div>
@@ -161,10 +161,10 @@ const answers = ["D", "B", "D", "A", "C", "D", "D", "B", "D", "D"];
 const explanations = [
   //Q1
   `
-    <div class="col-lg-6 pad-top">
+    <div class="col-md-6 pad-top">
         <iframe src="https://www.youtube.com/embed/oaQCiwzjnCM" width="100%" class="min-video-height" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="col-lg-6 pad-top">
+    <div class="col-md-6 pad-top">
         <p> Fresh water is a renewable resource, yet the world's supply of clean, fresh water is under increasing demand for human activities. The world has an estimated 1.34 billion cubic kilometers of water, but 96.5% of  is salty. Almost 70% of freshwater can be found in the ice caps of Antarctica and Greenland.</p>
         <p> Less than 1% of this water on Earth is accessible to humans, the rest is contained in soil moisture or deep underground. Accessible freshwater is located in lakes, rivers, reservoirs and shallow underground sources. Rainwater and snowfall do very little to replenish many underground source. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
         <p> Watch the first three minutes of the following video for a similar explanation. </p>
@@ -193,11 +193,11 @@ const explanations = [
     `,
   //Q4
   `
-    <div class="col-lg-4 pad-top">
+    <div class="col-md-4 pad-top">
         <img class="constrain-image" src='./media/cape-town.jpeg' />
         <p class="horz-centre-text"> <br/>For Cape Town, Day Zero hasn’t disappeared, it’s merely been delayed. The catastrophic shortage that nearly turned off its faucets was narrowly averted in 2018 with strict water rationing measures.</p>
     </div>
-    <div class="col-lg-8 pad-top">
+    <div class="col-md-8 pad-top">
         <img class="constrain-image"  src='./media/global-water-use.png' />
         <p class="horz-centre-text"> <br/>Note the 7-fold increase in over just one century. </p>
     </div>
@@ -239,11 +239,11 @@ const explanations = [
     `,
   //Q9
   `
-    <div class="col-lg-6">
+    <div class="col-md-6">
       <p>Why does beef take so much water to produce? Answer: To simplify, let’s look at Beef. Did you know that the juicy steak you love to eat uses up 15,400 liters of water for every 1 kilo? How? </p>
       <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned, the cow needs to drink – all of these adds up to 3,091,000 liters of water! </p>
     </div>
-    <div class="col-lg-6">
+    <div class="col-md-6">
       <p>All of that water just to make an innocent looking but delicious steak.</p>
       <p>In comparison, 1kg of chocolate requires 24,000 litres of water. 1 kg of paper only requires 10 litres of water. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>

@@ -16,6 +16,7 @@ let screen = screens.welcomeScreen;
 
 function display_question() {
   screen = screens.questionScreen;
+  $(".col-arrow").remove();
 
   $(".content").children().remove();
 
@@ -132,10 +133,16 @@ function display_explanation() {
       }, 300);
     }
   });
+
+  display_arrow_cols();
+  if (qnIndex === 0) {
+    $("#left-arrow-btn").remove();
+  }
 }
 
 function welcome_screen() {
   screen = screens.welcomeScreen;
+  $(".col-arrow").remove();
 
   const $starthtml = `
         <div id="mainTitle" class="pad-top">
@@ -143,8 +150,8 @@ function welcome_screen() {
         <h4> Learn about water sustainability </h4>
         </div>
         <div class="row align-items-center pad-top">
-            <div class="col-lg-6"><img class="constrain-image constrain-image-small" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
-            <div class="col-lg-6">
+            <div class="col-md-6"><img class="constrain-image constrain-image-small" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
+            <div class="col-md-6">
                 <div class="row horz-centre-text pad-top">
                     <p>It is said that water is going to be the petroleum of the 21st century.</p> 
                     <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
@@ -153,7 +160,7 @@ function welcome_screen() {
                     <p id="est-text"><br />Estimated time to complete: 15 - 30min<p>
                 </div>
                 <div class="row">
-                    <div id="start-button"><button type="submit" class="btn btn-primary" id="start-button">Start</button></div>
+                    <div id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Start</button></div>
                 </div>
             </div>
         </div>
@@ -168,6 +175,7 @@ function welcome_screen() {
 
 function end_screen() {
   screen = screens.endScreen;
+  $(".col-arrow").remove();
 
   const score = isFirstTryCorrect.filter((x) => x === true).length;
 
@@ -184,7 +192,7 @@ function end_screen() {
                     <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
                 </div>
                 <div class="row">
-                    <div id="start-button"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button></div>
+                    <div id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button></div>
                 </div>
             </div>
         </div>
@@ -242,7 +250,32 @@ function leftright_keypress_handler(keyID) {
       display_question();
     }
   }
-  console.log("qnIndex", qnIndex);
+}
+
+function display_arrow_cols() {
+  const $html = `
+    <div class="col-arrow col-arrow-left">
+      <button type="submit" class="btn btn-primary" id="left-arrow-btn">
+        <img class="arrow-img" src="./media/arrow-left.svg" />
+      </button>
+    </div>
+    <div class="col-arrow col-arrow-right">
+      <button type="submit" class="btn btn-primary" id="right-arrow-btn">
+        <img class="arrow-img" src="./media/arrow-right.svg" />
+      </button>
+    </div>
+    `;
+  $(".container-fluid").append($html);
+
+  $("#left-arrow-btn").on("click", (e) => {
+    e.preventDefault();
+    leftright_keypress_handler(37);
+  });
+
+  $("#right-arrow-btn").on("click", (e) => {
+    e.preventDefault();
+    leftright_keypress_handler(39);
+  });
 }
 
 $(() => {
