@@ -71,6 +71,7 @@ img {
 
 #mainTitle {
   margin: 3% 0 2% 0;
+  text-align: center;
 }
 
 .constrain-image {
@@ -82,6 +83,8 @@ img {
 }
 
 .constrain-image-small {
+  display: block;
+  margin: 0 auto;
   max-width: 450px;
 }
 
@@ -139,13 +142,11 @@ img {
   margin-top: 2%;
 }
 
-@media screen and (max-width: 768px) {
-  .pad-top {
-    padding-top: 3%;
-  }
-  #start-button-div {
-    margin: 0;
-  }
+.pad-top {
+  padding-top: 3%;
+}
+#start-button-div {
+  margin: 0;
 }
 
 @media screen and (max-width: 900px) {

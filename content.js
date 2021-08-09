@@ -1,7 +1,20 @@
+const titles = [
+  "Water, Water Everywhere",
+  "The Water Cycle",
+  "Water Usage in Agriculture",
+  "Almost Day Zero City",
+  "The Missing Phone",
+  "Water and Sanitation",
+  "Underground Water",
+  "Water Conservation",
+  "Water's Beef with Beef",
+  "Hidden Water",
+];
+
 const questions = [
   ` 
     <div id="qnIndex">1 / 10</div>
-    <div id="qnTitle">Water, water everywhere, nor any drop to drink</div>
+    <div id="qnTitle">${titles[0]}</div>
     <div id="qnText">
     <p>____ % of the world's water is freshwater.</p> 
     <p>70 % of this is trapped in the ice caps of Antarctica and Greenland.</p>
@@ -10,7 +23,7 @@ const questions = [
     `,
   `
     <p id="qnIndex">2 / 10</p>
-    <div id="qnTitle">The Water Cycle</div>
+    <div id="qnTitle">${titles[1]}</div>
     <div id="qnText">
     <p>_____________ &emsp; is the process of water turning into water vapour by heat from the sun.</p>
     <p>_____________ &emsp; is the process of water vapour mixing with dust particles and various gases to form clouds high in the atmosphere where  is colder.</p>
@@ -21,20 +34,20 @@ const questions = [
   `
     <p id="qnIndex">3 / 10</p>
     <div id="qnText">
-    <div id="qnTitle">Water Usage in Agriculture</div>
+    <div id="qnTitle">${titles[2]}</div>
     <p>Agriculture uses ______ % of the world’s freshwater. </p>
     </div>
     `,
   `
     <p id="qnIndex">4 / 10</p>
-    <div id="qnTitle">The City that almost hit Day Zero</div>
+    <div id="qnTitle">${titles[3]}</div>
     <div id="qnText">
     <p>Which major city almost ran out of water in 2018?</p>
     </div>
     `,
   `
     <p id="qnIndex">5 / 10</p>
-    <div id="qnTitle">The Case of the Missing Phone</div>
+    <div id="qnTitle">${titles[4]}</div>
     <div id="qnText" class="row">
         <div class="col-md-8">
             <img class="constrain-image" src='./media/man-drops-iphone.jpeg' />
@@ -47,7 +60,7 @@ const questions = [
     `,
   `
     <p id="qnIndex">6 / 10</p>
-    <div id="qnTitle">Water and Sanitation</div>
+    <div id="qnTitle">${titles[5]}</div>
     <div id="qnText">
     <p>According to the World Health Organization, ______ % of all diseases in the developing world are water related. </p>
     <p>By 2025, the United Nation estimates that ______ % of the world’s population residing in 50 countries will face water shortage.</p>
@@ -55,28 +68,28 @@ const questions = [
     `,
   `
     <p id="qnIndex">7 / 10</p>
-    <div id="qnTitle">The Earth's Underground Water</div>
+    <div id="qnTitle">${titles[6]}</div>
     <div id="qnText">
     <p>Of earth’s 37 major underground reservoirs, ______ are on track to be irreversibly emptied.</p>
     </div>
     `,
   `
     <p id="qnIndex">8 / 10</p>
-    <div id="qnTitle">Water Conservation</div>
+    <div id="qnTitle">${titles[7]}</div>
     <div id="qnText">
     <p>Regarding ways to conserve water, which statement is false?</p>
     </div>
     `,
   `
     <p id="qnIndex">9 / 10</p>
-    <div id="qnTitle">Water's Beef with Beef</div>
+    <div id="qnTitle">${titles[8]}</div>
     <div id="qnText">
     <p>1 kg of wheat requires 1 litre of water to produce. In comparison, 400g of beef requires ______ litres of water to produce.</p>
     </div>
     `,
   `
     <p id="qnIndex">10 / 10</p>
-    <div id="qnTitle">Hidden Water</div>
+    <div id="qnTitle">${titles[9]}</div>
     <div id="qnText">
     <p>We  consume about ______ litres of water a day in hidden uses, such as the products we use and clothes we wear, but most especially in the food we eat.</p>
     </div>
@@ -161,10 +174,10 @@ const answers = ["D", "B", "D", "A", "C", "D", "D", "B", "D", "D"];
 const explanations = [
   //Q1
   `
-    <div class="col-md-6 pad-top">
+    <div class="row pad-top">
         <iframe src="https://www.youtube.com/embed/oaQCiwzjnCM" width="100%" class="min-video-height" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="col-md-6 pad-top">
+    <div class="row pad-top">
         <p> Fresh water is a renewable resource, yet the world's supply of clean, fresh water is under increasing demand for human activities. The world has an estimated 1.34 billion cubic kilometers of water, but 96.5% of  is salty. Almost 70% of freshwater can be found in the ice caps of Antarctica and Greenland.</p>
         <p> Less than 1% of this water on Earth is accessible to humans, the rest is contained in soil moisture or deep underground. Accessible freshwater is located in lakes, rivers, reservoirs and shallow underground sources. Rainwater and snowfall do very little to replenish many underground source. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
         <p> Watch the first three minutes of the following video for a similar explanation. </p>
@@ -193,11 +206,11 @@ const explanations = [
     `,
   //Q4
   `
-    <div class="col-md-4 pad-top">
+    <div class="row pad-top">
         <img class="constrain-image" src='./media/cape-town.jpeg' />
         <p class="horz-centre-text"> <br/>For Cape Town, Day Zero hasn’t disappeared, it’s merely been delayed. The catastrophic shortage that nearly turned off its faucets was narrowly averted in 2018 with strict water rationing measures.</p>
     </div>
-    <div class="col-md-8 pad-top">
+    <div class="row pad-top">
         <img class="constrain-image"  src='./media/global-water-use.png' />
         <p class="horz-centre-text"> <br/>Note the 7-fold increase in over just one century. </p>
     </div>
@@ -208,11 +221,11 @@ const explanations = [
     `,
   //Q5
   `
-    <div class="col-xxl-6 pad-top">
+    <div class="row pad-top">
         <img class="constrain-image" src='./media/sun-moon-lake-dry.jpeg' />
     </div>
-    <div class="col-xxl-6 pad-top">
-        <p> It's not fake news! Thanks to the waterproof case and the fact that the entire lake lost almost all its water due to drought in most of 2020. The man was lucky that the person who picked it up while walking across the dried bed of the lake turned it on and managed to trace the owner.See the 'before' and 'after' image of the drought-stricken lake below. </p>
+    <div class="row pad-top">
+        <p> It's not fake news! Thanks to the waterproof case and the fact that the entire lake lost almost all its water due to drought in most of 2020. The man was lucky that the person who picked it up while walking across the dried bed of the lake turned it on and managed to trace the owner. See the 'before' and 'after' image of the drought-stricken lake below. </p>
         <p>Experts believe that Taiwan's water problems have been slowly building as a result of poor handling of its water resources. Despite the island experiencing 2.6 times the amount of the world's average annual rainfall, inadequate planning and an ignorance of water recycling have led to the current crisis.</p>
         <p>One water expert named Lee Hong-yuan explained that Taiwan's agriculture industry utilizes about 70 percent of the country's water supply, but outdated irrigation channels have caused plenty of waste, with almost half of the water being transported being lost to leaks, and a quarter being lost to evaporation during transportation. <a href="https://sea.mashable.com/tech/15242/man-drops-iphone-in-lake-gets-it-back-one-year-later-in-full-working-condition"[Source]</a></p>
     </div>
@@ -223,10 +236,10 @@ const explanations = [
     `,
   //Q7
   `
-    <div class="col-xl-6 pad-top">
+    <div class="row pad-top">
         <iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/OCzYdNSJF-k?start=122" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="col-xl-6 pad-top">
+    <div class="row pad-top">
         <p>This illustrates the concept of peak non-renewable water, where groundwater aquifers are being overpumped (or contaminated) faster than nature recharges them (this example is most like the peak oil debate).</p>
         <p>Ultimately, peak water is not about running out of freshwater, but about reaching physical, economic, and environmental limits on meeting human demands for water and the subsequent decline of water availability and use. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
         <p>Watch the following video from 02:02 to the 04:43 minute mark to learn about whether we are running out of clean water.</p>
@@ -241,9 +254,10 @@ const explanations = [
   `
     <div class="col-md-6">
       <p>Why does beef take so much water to produce? Answer: To simplify, let’s look at Beef. Did you know that the juicy steak you love to eat uses up 15,400 liters of water for every 1 kilo? How? </p>
-      <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned, the cow needs to drink – all of these adds up to 3,091,000 liters of water! </p>
+      <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned,  </p>
     </div>
     <div class="col-md-6">
+      <p>the cow needs to drink – all of these adds up to 3,091,000 liters of water!</p>
       <p>All of that water just to make an innocent looking but delicious steak.</p>
       <p>In comparison, 1kg of chocolate requires 24,000 litres of water. 1 kg of paper only requires 10 litres of water. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
@@ -254,18 +268,18 @@ const explanations = [
         <p>Some examples of the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
     <div class="row g-2">
-        <div class="col-xl-6 pad-top">    
+        <div class="col-xl-6">    
             <img class="constrain-image constrain-image-small" src='./media/cocacola-25l.png' />
         </div>
-        <div class="col-xl-6 pad-top">
+        <div class="col-xl-6">
             <img class="constrain-image constrain-image-small" src='./media/tshirt-2500l.png' />
         </div>
     </div>
     <div class="row g-2">
-        <div class="col-xl-6 pad-top">
+        <div class="col-xl-6">
             <img class="constrain-image constrain-image-small" src='./media/hamburger-15000l.png' />
         </div>
-        <div class="col-xl-6 pad-top">
+        <div class="col-xl-6">
             <img class="constrain-image constrain-image-small" src='./media/coffee-130l.png' />
         </div>
     </div>

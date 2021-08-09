@@ -1,6 +1,6 @@
 "use strict";
 
-let qnIndex = 0;
+let qnIndex = 8;
 const numQn = answers.length;
 let isFirstTryCorrect = []; //score tracking
 let userOptionSelections = []; //user selections tracking
@@ -150,19 +150,16 @@ function welcome_screen() {
         <h4> Learn about water sustainability </h4>
         </div>
         <div class="row align-items-center pad-top">
-            <div class="col-md-6"><img class="constrain-image constrain-image-small" src='./media/E_SDG_action_card_square_6_small.jpg'/></div>
-            <div class="col-md-6">
-                <div class="row horz-centre-text pad-top">
-                    <p>It is said that water is going to be the petroleum of the 21st century.</p> 
-                    <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
-                    <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
-                    <p>Learn more about this topic through this interactive quiz.</p>
-                    <p id="est-text"><br />Estimated time to complete: 15 - 30min<p>
-                </div>
-                <div class="row">
-                    <div id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Start</button></div>
-                </div>
-            </div>
+          <img class="constrain-image-small" src='./media/E_SDG_action_card_square_6_small.jpg'/>
+        </div>
+        <div class="row horz-centre-text pad-top">
+          <p>It is said that water is going to be the petroleum of the 21st century.</p> 
+          <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
+          <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
+          <p>Learn more about this topic through this interactive quiz.</p>
+          <p id="est-text">Estimated time to complete: 15 - 30min<p>
+        </div>
+        <div class="row" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Start</button>
         </div>
     `;
   $(".content").html($starthtml);
@@ -181,20 +178,17 @@ function end_screen() {
 
   const $endhtml = `
         <div id="mainTitle" class="pad-top">
-        <h1> You have completed this quiz.</h1>
-        <h4> Hope you learnt something interesting!</h4>
+          <h1> You have completed this quiz.</h1>
+          <h4> Hope you learnt something interesting!</h4>
         </div>
         <div class="row align-items-center pad-top">
-            <div class="col-xl-6"><iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            <div class="col-xl-6">
-                <div class="row horz-centre-text pad-top">
-                    <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
-                    <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
-                </div>
-                <div class="row">
-                    <div id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button></div>
-                </div>
-            </div>
+          <iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="row horz-centre-text pad-top">
+          <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
+          <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
+        </div>
+        <div class="row" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button>
         </div>
     `;
   $(".content").html($endhtml);
