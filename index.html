@@ -43,22 +43,38 @@
       href="./favicon-16x16.png"
     />
     <link rel="manifest" href="./site.webmanifest" />
-    <script src="content.js"></script>
-    <script src="app.js"></script>
     <title>Water Future</title>
   </head>
 
   <body>
     <div class="container-fluid">
+      <!-- header -->
       <div id="header" class="row align-items-center justify-content-between">
         <div id="mycorr_logo" class="col-6">
           <img src="./media/mycorr_logo.png" />
         </div>
         <div id="mycorr_email" class="col-6">mycorr.sg@gmail.com</div>
       </div>
+      <!-- main body -->
       <div class="row justify-content-center">
-        <div class="content col-12"></div>
+        <!-- nav -->
+        <div class="d-none d-xl-flex col-xl-2 nav flex-column"></div>
+
+        <!--left arrow col-->
+        <div
+          class="d-none d-md-flex col-md-1 col-lg-2 arrow-col left-arrow-col"
+        ></div>
+
+        <!-- main content -->
+        <div class="col-12 col-md-10 col-lg-8 col-xl-6 content"></div>
+
+        <!-- right arrow col-->
+        <div
+          class="d-none d-md-flex col-md-1 col-lg-2 arrow-col right-arrow-col"
+        ></div>
       </div>
     </div>
+    <script src="content.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

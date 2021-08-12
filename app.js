@@ -1,6 +1,6 @@
 "use strict";
 
-let qnIndex = 8;
+let qnIndex = 0;
 const numQn = answers.length;
 let isFirstTryCorrect = []; //score tracking
 let userOptionSelections = []; //user selections tracking
@@ -16,14 +16,14 @@ let screen = screens.welcomeScreen;
 
 function display_question() {
   screen = screens.questionScreen;
-  $(".col-arrow").remove();
+  $(".arrow-col").empty();
 
   $(".content").children().remove();
 
   const $html = `
             <div class="question-container"></div>
             <div class="options-container"></div>
-            <div class="explanation-container row"></div>
+            <div class="explanation-container"></div>
         `;
   $(".content").html($html);
 
@@ -142,22 +142,21 @@ function display_explanation() {
 
 function welcome_screen() {
   screen = screens.welcomeScreen;
-  $(".col-arrow").remove();
+  $(".arrow-col").children().remove();
 
   const $starthtml = `
         <div id="mainTitle" class="pad-top">
-        <h1> The Future of our Water </h1>
-        <h4> Learn about water sustainability </h4>
+          <h1> The Future of our Water </h1>
+          <h4> Learn about water sustainability </h4>
         </div>
-        <div class="row align-items-center pad-top">
-          <img class="constrain-image-small" src='./media/E_SDG_action_card_square_6_small.jpg'/>
+        <div class="row align-items-center">
+          <img class="constrain-image-small pad-top" src='./media/E_SDG_action_card_square_6_small.jpg'/>
         </div>
         <div class="row horz-centre-text pad-top">
           <p>It is said that water is going to be the petroleum of the 21st century.</p> 
-          <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion.</p> 
-          <p>The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
+          <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion. The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
           <p>Learn more about this topic through this interactive quiz.</p>
-          <p id="est-text">Estimated time to complete: 15 - 30min<p>
+          <p id="est-text">Estimated time to complete: 15 - 30min</p>
         </div>
         <div class="row" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Start</button>
         </div>
@@ -172,7 +171,7 @@ function welcome_screen() {
 
 function end_screen() {
   screen = screens.endScreen;
-  $(".col-arrow").remove();
+  $(".arrow-col").children().remove();
 
   const score = isFirstTryCorrect.filter((x) => x === true).length;
 
@@ -188,7 +187,7 @@ function end_screen() {
           <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
           <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
         </div>
-        <div class="row" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button>
+        <div class="row pad-top" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button>
         </div>
     `;
   $(".content").html($endhtml);
@@ -247,19 +246,23 @@ function leftright_keypress_handler(keyID) {
 }
 
 function display_arrow_cols() {
-  const $html = `
-    <div class="col-arrow col-arrow-left">
-      <button type="submit" class="btn btn-primary" id="left-arrow-btn">
+  const $html1 = `
+    <div class="left-btn-div">  
+      <button type="submit" class="btn" id="left-arrow-btn">
         <img class="arrow-img" src="./media/arrow-left.svg" />
       </button>
     </div>
-    <div class="col-arrow col-arrow-right">
-      <button type="submit" class="btn btn-primary" id="right-arrow-btn">
+      `;
+  const $html2 = `
+    <div class="right-btn-div">
+      <button type="submit" class="btn" id="right-arrow-btn">
         <img class="arrow-img" src="./media/arrow-right.svg" />
       </button>
     </div>
-    `;
-  $(".container-fluid").append($html);
+      `;
+
+  $(".content").prepend($html1);
+  $(".content").append($html2);
 
   $("#left-arrow-btn").on("click", (e) => {
     e.preventDefault();
@@ -272,38 +275,83 @@ function display_arrow_cols() {
   });
 }
 
-$(() => {
-  welcome_screen();
+function append_nav() {
+  const $html = `
+    <div class="nav-header">
+      <p><strong>Water Future</strong></p>
+      <p><small>30 min | 10 questions</small></p>
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          style="width: 50%"
+          aria-valuenow="50"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+    </div>
+    <div class="nav-body>
+      <ol>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            >Disabled</a
+          >
+        </li>
+      </ol>
+    </div>
+    `;
 
+  $(".nav").html($html);
+}
+
+function assign_keypresses(e) {
+  if (e.which === 38 || e.which === 40) {
+    updown_keypress_handler(e.which);
+  }
+
+  if (screen === screens.welcomeScreen || screen === screens.endScreen) {
+    if (e.which === 13) {
+      $("#start-button").click();
+    }
+  } else if (screen === screens.questionScreen) {
+    if (e.which === 13) {
+      $("#submit-button").click();
+    }
+  } else if (screen === screens.explanationScreen) {
+    switch (e.which) {
+      case 13:
+        $("#next-button").click();
+        break;
+      case 37:
+      case 39: //left, right
+        leftright_keypress_handler(e.which);
+        break;
+    }
+  }
+}
+
+$(() => {
   $(document).on("keydown", (e) => {
     //use keydown instead of keypress
     e.preventDefault(); //prevents screen from auto-refreshing which causes the button to be submitted twice
     // console.log("e.which", e.which);
-
-    if (e.which === 38 || e.which === 40) {
-      updown_keypress_handler(e.which);
-    }
-
-    if (screen === screens.welcomeScreen || screen === screens.endScreen) {
-      if (e.which === 13) {
-        $("#start-button").click();
-      }
-    } else if (screen === screens.questionScreen) {
-      switch (e.which) {
-        case 13:
-          $("#submit-button").click();
-          break;
-      }
-    } else if (screen === screens.explanationScreen) {
-      switch (e.which) {
-        case 13:
-          $("#next-button").click();
-          break;
-        case 37:
-        case 39: //left, right
-          leftright_keypress_handler(e.which);
-          break;
-      }
-    }
+    assign_keypresses(e);
   });
+  append_nav();
+  display_arrow_cols();
+  welcome_screen();
 }); //end window onload

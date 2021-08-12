@@ -48,11 +48,11 @@ const questions = [
   `
     <p id="qnIndex">5 / 10</p>
     <div id="qnTitle">${titles[4]}</div>
-    <div id="qnText" class="row">
-        <div class="col-md-8">
+    <div id="qnText">
+        <div class="row pad-top">
             <img class="constrain-image" src='./media/man-drops-iphone.jpeg' />
         </div>
-        <div class="col-md-4 pad-top">
+        <div class="row pad-top">
             <p>A news article claimed that a Taiwanese man visited Taiwan's famous Sun Moon Lake in March 2020 and dropped his iPhone into the lake while paddle-boarding.</p> 
             <p>A year later in 2021, he managed to get it back in full working condition, no less. So what's the deal here?</p>
         </div>
@@ -176,7 +176,7 @@ const explanations = [
   `
     <div class="row pad-top">
         <iframe src="https://www.youtube.com/embed/oaQCiwzjnCM" width="100%" class="min-video-height" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+        </div>
     <div class="row pad-top">
         <p> Fresh water is a renewable resource, yet the world's supply of clean, fresh water is under increasing demand for human activities. The world has an estimated 1.34 billion cubic kilometers of water, but 96.5% of  is salty. Almost 70% of freshwater can be found in the ice caps of Antarctica and Greenland.</p>
         <p> Less than 1% of this water on Earth is accessible to humans, the rest is contained in soil moisture or deep underground. Accessible freshwater is located in lakes, rivers, reservoirs and shallow underground sources. Rainwater and snowfall do very little to replenish many underground source. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
@@ -252,15 +252,17 @@ const explanations = [
     `,
   //Q9
   `
-    <div class="col-md-6">
+  <div class="row">
+    <div class="col-lg-6">
       <p>Why does beef take so much water to produce? Answer: To simplify, let’s look at Beef. Did you know that the juicy steak you love to eat uses up 15,400 liters of water for every 1 kilo? How? </p>
       <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned,  </p>
     </div>
-    <div class="col-md-6">
+    <div class="col-lg-6">
       <p>the cow needs to drink – all of these adds up to 3,091,000 liters of water!</p>
       <p>All of that water just to make an innocent looking but delicious steak.</p>
       <p>In comparison, 1kg of chocolate requires 24,000 litres of water. 1 kg of paper only requires 10 litres of water. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
+  </div>
     `,
   //Q10
   `

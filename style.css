@@ -1,5 +1,5 @@
 div {
-  /* border: 1px solid gray; */
+  border: 1px solid gray;
 }
 
 body {
@@ -7,38 +7,9 @@ body {
   scroll-behavior: smooth;
 }
 
-.arrow-img {
-  width: 1.5em;
-}
-
-.col-arrow {
-  position: fixed;
-  top: 45%;
-}
-
-.col-arrow-left {
-  text-align: left;
-  left: 3%;
-}
-
-.col-arrow-right {
-  text-align: right;
-  right: 3%;
-}
-
-#left-arrow-btn {
-  background: none;
-  border: none;
-}
-
-#right-arrow-btn {
-  background: none;
-  border: none;
-}
-
 .content {
-  margin: 0 0% 10% 0%;
-  max-width: 768px;
+  margin-bottom: 3%;
+  /* max-width: 768px; */
 }
 
 p {
@@ -49,10 +20,6 @@ p {
   height: 70px;
   border-bottom: 1px solid;
   border-color: rgba(128, 128, 128, 0.2);
-}
-
-img {
-  max-width: 800px;
 }
 
 #mycorr_logo {
@@ -70,7 +37,7 @@ img {
 }
 
 #mainTitle {
-  margin: 3% 0 2% 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -96,7 +63,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 3% 0 0 0; */
+  margin: 2% 0 0 0;
 }
 
 .horz-centre-text {
@@ -112,7 +79,6 @@ img {
 
 #qnTitle {
   font-family: "Roboto", sans-serif;
-  /* font-weight: bold; */
   font-size: x-large;
   margin-bottom: 2%;
 }
@@ -123,19 +89,14 @@ img {
 
 .form-check {
   padding: 1% 5%;
-  margin: 1% 1%;
+  margin: 2% 1%;
   background-color: azure;
   border: 1px solid azure;
 }
 
 #submit-button,
 #next-button {
-  margin: 2% 0 10% 0;
-}
-
-#result {
-  padding: 1% 2%;
-  margin: 2% 0;
+  margin: 2% 0 5% 0;
 }
 
 .explanation-container {
@@ -145,25 +106,86 @@ img {
 .pad-top {
   padding-top: 3%;
 }
-#start-button-div {
-  margin: 0;
+
+.left-arrow-col,
+.right-arrow-col {
+  background-color: bisque;
 }
 
-@media screen and (max-width: 900px) {
-  .col-arrow {
+.arrow-img {
+  width: 1.5em;
+}
+
+.left-btn-div {
+  position: fixed;
+  top: 45%;
+  left: 23.67%;
+}
+
+.right-btn-div {
+  position: fixed;
+  top: 45%;
+  right: 7%;
+}
+/*X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .left-btn-div,
+  .right-btn-div {
     top: 93%;
     height: 7%;
     width: 50%;
     background: white;
+    border: none;
     border-top: 1px solid lightgrey;
     text-align: center;
     padding-top: 2%;
   }
-  .col-arrow-left {
-    left: 0%;
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .left-btn-div {
+    left: 2%;
   }
 
-  .col-arrow-right {
-    right: 0%;
+  .right-btn-div {
+    right: 2%;
   }
+}
+
+.nav {
+  background: black;
+  color: white;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.nav-header {
+  padding: 5%;
+  border-bottom: 1px solid lightgrey;
+}
+
+.nav-header p {
+  line-height: 0.8em;
+}
+
+p strong {
+  font-size: 1.1em;
+}
+
+p small {
+  font-size: 0.7em;
+}
+
+.progress {
+  /* margin: 5% 0; */
+  /* border-bottom: 1px solid lightgrey; */
 }
