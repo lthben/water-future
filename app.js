@@ -15,9 +15,16 @@ let screens = {
 let screen = screens.welcomeScreen;
 
 function display_question() {
+  if (qnIndex === 0) {
+    display_navbar();
+    $(".left-arrow-col").removeClass("col-xl-3");
+    $(".left-arrow-col").addClass("col-xl-4");
+    $(".right-arrow-col").removeClass("col-xl-3");
+    $(".right-arrow-col").addClass("col-xl-2");
+  } else update_nav_bar();
+
   screen = screens.questionScreen;
   $(".arrow-col").empty();
-
   $(".content").children().remove();
 
   const $html = `
@@ -107,6 +114,7 @@ function eval_user_sel() {
   // console.log("Correct");
 
   display_explanation();
+  update_nav_bar();
 }
 
 function display_explanation() {
@@ -114,25 +122,6 @@ function display_explanation() {
 
   const $html = explanations[qnIndex];
   $(".explanation-container").html($html);
-
-  const $buttondiv = $("<div>").addClass("button-div");
-  const $buttonhtml = `<button type="submit" class="btn btn-primary" id="next-button">Next</button>`;
-  $buttondiv.html($buttonhtml);
-  $(".explanation-container").append($buttondiv);
-
-  $("#next-button").on("click", (e) => {
-    e.preventDefault();
-    $(".content").children().children().remove();
-
-    qnIndex++;
-    if (qnIndex === numQn) {
-      end_screen();
-    } else {
-      setTimeout(() => {
-        display_question();
-      }, 300);
-    }
-  });
 
   display_arrow_cols();
   if (qnIndex === 0) {
@@ -172,6 +161,12 @@ function welcome_screen() {
 function end_screen() {
   screen = screens.endScreen;
   $(".arrow-col").children().remove();
+  $(".nav").remove();
+
+  $(".left-arrow-col").removeClass("col-xl-4");
+  $(".left-arrow-col").addClass("col-xl-3");
+  $(".right-arrow-col").removeClass("col-xl-2");
+  $(".right-arrow-col").addClass("col-xl-3");
 
   const score = isFirstTryCorrect.filter((x) => x === true).length;
 
@@ -275,47 +270,43 @@ function display_arrow_cols() {
   });
 }
 
-function append_nav() {
+function display_navbar() {
   const $html = `
+  <nav class="d-none d-xl-flex col-xl-2 nav nav-tabs fixed-top flex-column">
     <div class="nav-header">
-      <p><strong>Water Future</strong></p>
-      <p><small>30 min | 10 questions</small></p>
+      <p id="strong-txt">Water Future</p>
+      <p id="small-txt">30 min | 10 questions</p>
       <div class="progress">
         <div
           class="progress-bar"
           role="progressbar"
-          style="width: 50%"
-          aria-valuenow="50"
+          style="width: 0%"
+          aria-valuenow="0"
           aria-valuemin="0"
           aria-valuemax="100"
         ></div>
       </div>
     </div>
-    <div class="nav-body>
-      <ol>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
-        </li>
-      </ol>
-    </div>
+    <a class="nav-link active" href="#" tabindex="1">${titles[0]}</a>
+    <a class="nav-link active" href="#" tabindex="2">${titles[1]}</a>
+    <a class="nav-link active" href="#" tabindex="3">${titles[2]}</a>
+    <a class="nav-link disabled" href="#" tabindex="4">${titles[3]}</a>
+    <a class="nav-link disabled" href="#" tabindex="5">${titles[4]}</a>
+    <a class="nav-link disabled" href="#" tabindex="6">${titles[5]}</a>
+    <a class="nav-link disabled" href="#" tabindex="7">${titles[6]}</a>
+    <a class="nav-link disabled" href="#" tabindex="8">${titles[7]}</a>
+    <a class="nav-link" href="#" tabindex="9">${titles[8]}</a>
+    <a class="nav-link" href="#" tabindex="10">${titles[9]}</a>
+  </nav>
     `;
 
-  $(".nav").html($html);
+  $(".main-body").prepend($html);
+}
+
+function update_nav_bar() {
+  let w = userOptionSelections.length * 10;
+  $(".progress-bar").css("width", `${w}%`);
+  $(".progress-bar").attr("aria-valuenow", `${w}`);
 }
 
 function assign_keypresses(e) {
@@ -351,7 +342,6 @@ $(() => {
     // console.log("e.which", e.which);
     assign_keypresses(e);
   });
-  append_nav();
   display_arrow_cols();
   welcome_screen();
 }); //end window onload
