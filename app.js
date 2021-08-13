@@ -15,13 +15,13 @@ let screens = {
 let screen = screens.welcomeScreen;
 
 function display_question() {
-  if (qnIndex === 0) {
-    display_navbar();
-    $(".left-arrow-col").removeClass("col-xl-3");
-    $(".left-arrow-col").addClass("col-xl-4");
-    $(".right-arrow-col").removeClass("col-xl-3");
-    $(".right-arrow-col").addClass("col-xl-2");
-  } else update_nav_bar();
+  if (qnIndex === 0) display_navbar();
+
+  //shift to the right to cater for fixed position nav bar
+  $(".left-arrow-col").removeClass("col-xl-3");
+  $(".left-arrow-col").addClass("col-xl-4");
+  $(".right-arrow-col").removeClass("col-xl-3");
+  $(".right-arrow-col").addClass("col-xl-2");
 
   screen = screens.questionScreen;
   $(".arrow-col").empty();
@@ -114,7 +114,13 @@ function eval_user_sel() {
   // console.log("Correct");
 
   display_explanation();
-  update_nav_bar();
+
+  //update progress bar();
+  let w = userOptionSelections.length * 10;
+  $(".progress-bar").css("width", `${w}%`);
+  $(".progress-bar").attr("aria-valuenow", `${w}`);
+
+  $("#nav-item-" + qnIndex).prop("disabled", false);
 }
 
 function display_explanation() {
@@ -127,72 +133,6 @@ function display_explanation() {
   if (qnIndex === 0) {
     $("#left-arrow-btn").remove();
   }
-}
-
-function welcome_screen() {
-  screen = screens.welcomeScreen;
-  $(".arrow-col").children().remove();
-
-  const $starthtml = `
-        <div id="mainTitle" class="pad-top">
-          <h1> The Future of our Water </h1>
-          <h4> Learn about water sustainability </h4>
-        </div>
-        <div class="row align-items-center">
-          <img class="constrain-image-small pad-top" src='./media/E_SDG_action_card_square_6_small.jpg'/>
-        </div>
-        <div class="row horz-centre-text pad-top">
-          <p>It is said that water is going to be the petroleum of the 21st century.</p> 
-          <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion. The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
-          <p>Learn more about this topic through this interactive quiz.</p>
-          <p id="est-text">Estimated time to complete: 15 - 30min</p>
-        </div>
-        <div class="row" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Start</button>
-        </div>
-    `;
-  $(".content").html($starthtml);
-
-  $("#start-button").on("click", (e) => {
-    e.preventDefault();
-    display_question();
-  });
-}
-
-function end_screen() {
-  screen = screens.endScreen;
-  $(".arrow-col").children().remove();
-  $(".nav").remove();
-
-  $(".left-arrow-col").removeClass("col-xl-4");
-  $(".left-arrow-col").addClass("col-xl-3");
-  $(".right-arrow-col").removeClass("col-xl-2");
-  $(".right-arrow-col").addClass("col-xl-3");
-
-  const score = isFirstTryCorrect.filter((x) => x === true).length;
-
-  const $endhtml = `
-        <div id="mainTitle" class="pad-top">
-          <h1> You have completed this quiz.</h1>
-          <h4> Hope you learnt something interesting!</h4>
-        </div>
-        <div class="row align-items-center pad-top">
-          <iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="row horz-centre-text pad-top">
-          <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
-          <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
-        </div>
-        <div class="row pad-top" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button>
-        </div>
-    `;
-  $(".content").html($endhtml);
-  $("#start-button").on("click", (e) => {
-    e.preventDefault();
-    qnIndex = 0;
-    isFirstTryCorrect = [];
-    userOptionSelections = [];
-    welcome_screen();
-  });
 }
 
 function updown_keypress_handler(keyID) {
@@ -269,11 +209,11 @@ function display_arrow_cols() {
     leftright_keypress_handler(39);
   });
 }
-
+// collapse navbar-collapse
 function display_navbar() {
   const $html = `
-  <nav class="d-none d-xl-flex col-xl-2 nav nav-tabs fixed-top flex-column">
-    <div class="nav-header">
+  <nav class="d-none d-xl-flex col-xl-2 fixed-top flex-column bg-dark navbar navbar-expand-xl navbar-dark">
+    <div class="navbar-brand">
       <p id="strong-txt">Water Future</p>
       <p id="small-txt">30 min | 10 questions</p>
       <div class="progress">
@@ -287,26 +227,38 @@ function display_navbar() {
         ></div>
       </div>
     </div>
-    <a class="nav-link active" href="#" tabindex="1">${titles[0]}</a>
-    <a class="nav-link active" href="#" tabindex="2">${titles[1]}</a>
-    <a class="nav-link active" href="#" tabindex="3">${titles[2]}</a>
-    <a class="nav-link disabled" href="#" tabindex="4">${titles[3]}</a>
-    <a class="nav-link disabled" href="#" tabindex="5">${titles[4]}</a>
-    <a class="nav-link disabled" href="#" tabindex="6">${titles[5]}</a>
-    <a class="nav-link disabled" href="#" tabindex="7">${titles[6]}</a>
-    <a class="nav-link disabled" href="#" tabindex="8">${titles[7]}</a>
-    <a class="nav-link" href="#" tabindex="9">${titles[8]}</a>
-    <a class="nav-link" href="#" tabindex="10">${titles[9]}</a>
+    <div class="nav-body">
+      <button class="btn nav-link" type="button" id="nav-item-0" disabled>${titles[0]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-1" disabled>${titles[1]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-2" disabled>${titles[2]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-3" disabled>${titles[3]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-4" disabled>${titles[4]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-5" disabled>${titles[5]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-6" disabled>${titles[6]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-7" disabled>${titles[8]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-8" disabled>${titles[7]}</button>
+      <button class="btn nav-link" type="button" id="nav-item-9" disabled>${titles[9]}</button>
+    </div>
   </nav>
-    `;
-
+  `;
   $(".main-body").prepend($html);
-}
 
-function update_nav_bar() {
-  let w = userOptionSelections.length * 10;
-  $(".progress-bar").css("width", `${w}%`);
-  $(".progress-bar").attr("aria-valuenow", `${w}`);
+  $(".nav-body").on("click", (e) => {
+    e.preventDefault();
+    console.log(e.target.id);
+    let idStr = e.target.id;
+    let idNum = idStr.match(/\d+/g); //extract the number in nav-item-#
+    if (
+      idNum !== null &&
+      idNum < userOptionSelections.length &&
+      idNum != qnIndex
+    ) {
+      qnIndex = idNum;
+      display_question();
+      console.log("idNum: ", idNum);
+      console.log("userOptionsSelection.length: ", userOptionSelections.length);
+    }
+  });
 }
 
 function assign_keypresses(e) {
@@ -342,6 +294,5 @@ $(() => {
     // console.log("e.which", e.which);
     assign_keypresses(e);
   });
-  display_arrow_cols();
   welcome_screen();
 }); //end window onload

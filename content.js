@@ -176,11 +176,16 @@ const explanations = [
   `
     <div class="row pad-top">
         <iframe src="https://www.youtube.com/embed/oaQCiwzjnCM" width="100%" class="min-video-height" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        
     <div class="row pad-top">
+      <div class="col-lg-6">
         <p> Fresh water is a renewable resource, yet the world's supply of clean, fresh water is under increasing demand for human activities. The world has an estimated 1.34 billion cubic kilometers of water, but 96.5% of  is salty. Almost 70% of freshwater can be found in the ice caps of Antarctica and Greenland.</p>
-        <p> Less than 1% of this water on Earth is accessible to humans, the rest is contained in soil moisture or deep underground. Accessible freshwater is located in lakes, rivers, reservoirs and shallow underground sources. Rainwater and snowfall do very little to replenish many underground source. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
+        <p> Less than 1% of this water on Earth is accessible to humans, the rest is contained in soil moisture or deep underground. </p>
+      </div>
+      <div class="col-lg-6">  
+        <p>Accessible freshwater is located in lakes, rivers, reservoirs and shallow underground sources. Rainwater and snowfall do very little to replenish many underground source. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
         <p> Watch the first three minutes of the following video for a similar explanation. </p>
+      </div>
     </div>
     `,
   //Q2
@@ -225,9 +230,14 @@ const explanations = [
         <img class="constrain-image" src='./media/sun-moon-lake-dry.jpeg' />
     </div>
     <div class="row pad-top">
+      <div class="col-lg-6">
         <p> It's not fake news! Thanks to the waterproof case and the fact that the entire lake lost almost all its water due to drought in most of 2020. The man was lucky that the person who picked it up while walking across the dried bed of the lake turned it on and managed to trace the owner. See the 'before' and 'after' image of the drought-stricken lake below. </p>
-        <p>Experts believe that Taiwan's water problems have been slowly building as a result of poor handling of its water resources. Despite the island experiencing 2.6 times the amount of the world's average annual rainfall, inadequate planning and an ignorance of water recycling have led to the current crisis.</p>
+        <p> Experts believe that Taiwan's water problems have been slowly building as a result of poor handling of its water resources.</p>
+      </div>
+      <div class="col-lg-6">
+        <p>Despite the island experiencing 2.6 times the amount of the world's average annual rainfall, inadequate planning and an ignorance of water recycling have led to the current crisis.</p>
         <p>One water expert named Lee Hong-yuan explained that Taiwan's agriculture industry utilizes about 70 percent of the country's water supply, but outdated irrigation channels have caused plenty of waste, with almost half of the water being transported being lost to leaks, and a quarter being lost to evaporation during transportation. <a href="https://sea.mashable.com/tech/15242/man-drops-iphone-in-lake-gets-it-back-one-year-later-in-full-working-condition"[Source]</a></p>
+      </div>
     </div>
     `,
   //Q6
@@ -240,10 +250,14 @@ const explanations = [
         <iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/OCzYdNSJF-k?start=122" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="row pad-top">
+      <div class="col-lg-6">
         <p>This illustrates the concept of peak non-renewable water, where groundwater aquifers are being overpumped (or contaminated) faster than nature recharges them (this example is most like the peak oil debate).</p>
         <p>Ultimately, peak water is not about running out of freshwater, but about reaching physical, economic, and environmental limits on meeting human demands for water and the subsequent decline of water availability and use. <a href="https://en.wikipedia.org/wiki/Peak_water">[Source]</a></p>
+      </div>
+      <div class="col-lg-6">
         <p>Watch the following video from 02:02 to the 04:43 minute mark to learn about whether we are running out of clean water.</p>
         <p>TLDR: the total amount of water in the world is constant due to the water cycle but whether the water is available for human use is another matter entirely.</p>
+      </div>
     </div>
     `,
   //Q8
@@ -287,3 +301,69 @@ const explanations = [
     </div>
     `,
 ];
+
+function welcome_screen() {
+  screen = screens.welcomeScreen;
+  $(".arrow-col").children().remove();
+
+  const $starthtml = `
+        <div id="mainTitle" class="pad-top">
+          <h1> The Future of our Water </h1>
+          <h4> Learn about water sustainability </h4>
+        </div>
+        <div class="row align-items-center">
+          <img class="constrain-image-small pad-top" src='./media/E_SDG_action_card_square_6_small.jpg'/>
+        </div>
+        <div class="row horz-centre-text pad-top">
+          <p>It is said that water is going to be the petroleum of the 21st century.</p> 
+          <p>The demand for water - the life-sustaining natural resource with no substitute - continues to escalate at an unsustainable rate, due to population growth and industrial expansion. The world's finite supply is also shrinking due to pollution, draining of underground aquifers, and climate change. </p>
+          <p>Learn more about this topic through this interactive quiz.</p>
+          <p id="est-text">Estimated time to complete: 15 - 30min</p>
+        </div>
+        <div class="row" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Start</button>
+        </div>
+    `;
+  $(".content").html($starthtml);
+
+  $("#start-button").on("click", (e) => {
+    e.preventDefault();
+    display_question();
+  });
+}
+
+function end_screen() {
+  screen = screens.endScreen;
+  $(".arrow-col").children().remove();
+  $("nav").remove();
+
+  $(".left-arrow-col").removeClass("col-xl-4");
+  $(".left-arrow-col").addClass("col-xl-3");
+  $(".right-arrow-col").removeClass("col-xl-2");
+  $(".right-arrow-col").addClass("col-xl-3");
+
+  const score = isFirstTryCorrect.filter((x) => x === true).length;
+
+  const $endhtml = `
+        <div id="mainTitle" class="pad-top">
+          <h1> You have completed this quiz.</h1>
+          <h4> Hope you learnt something interesting!</h4>
+        </div>
+        <div class="row align-items-center pad-top">
+          <iframe width="100%" class="min-video-height" src="https://www.youtube.com/embed/C65iqOSCZOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="row horz-centre-text pad-top">
+          <p>You have got ${score} out of ${numQn} questions correct on the first attempt.</p> 
+          <p>This 18 minute video - "World's Water Crisis", is a highly recommended watch about this topic.</p>
+        </div>
+        <div class="row pad-top" id="start-button-div"><button type="submit" class="btn btn-primary" id="start-button">Retake quiz</button>
+        </div>
+    `;
+  $(".content").html($endhtml);
+  $("#start-button").on("click", (e) => {
+    e.preventDefault();
+    qnIndex = 0;
+    isFirstTryCorrect = [];
+    userOptionSelections = [];
+    welcome_screen();
+  });
+}

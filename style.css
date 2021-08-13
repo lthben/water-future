@@ -2,6 +2,11 @@ div {
   /* border: 1px solid gray; */
 }
 
+.left-arrow-col,
+.right-arrow-col {
+  /* background-color: bisque; */
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
@@ -111,11 +116,6 @@ p {
   padding-top: 3%;
 }
 
-.left-arrow-col,
-.right-arrow-col {
-  /* background-color: bisque; */
-}
-
 .arrow-img {
   width: 1.5em;
 }
@@ -165,33 +165,41 @@ p {
   }
 }
 
-.nav {
-  background: black;
+.navbar {
   color: white;
-  padding: 0;
-  margin-bottom: 0;
   top: 70px;
-  font-size: 0.9em;
   height: 100vh;
+  padding: 0;
 }
 
-.nav-header {
-  padding: 5%;
+.navbar-brand {
+  width: 100%;
+  padding: 10% 5%;
   border-bottom: 1px solid lightgrey;
-}
-
-.nav-header p {
-  line-height: 1.2em;
-}
-
-#strong-txt {
-  font-size: 1.4em;
+  margin: 0;
+  margin-bottom: 5%;
 }
 
 #small-txt {
-  font-size: 0.8em;
+  font-size: 0.6em;
 }
 
 .progress {
   height: 0.3em;
+}
+
+.nav-body {
+  width: 100%;
+}
+
+.nav-body button {
+  width: 100%;
+  text-align: left;
+  font-size: 0.9em;
+  line-height: 2em;
+}
+
+button.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
 }
