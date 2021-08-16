@@ -21,7 +21,7 @@ An interactive quiz to test your knowledge and learn about water sustainability.
 
 ## Link to live site
 
-https://pages.git.generalassemb.ly/lthben/water-future/
+https://lthben.github.io/water-future/
 
 <!-- ## Unsolved problems, etc -->
 
