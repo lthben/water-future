@@ -180,6 +180,32 @@ function leftright_keypress_handler(keyID) {
   }
 }
 
+function assign_keypresses(e) {
+  if (e.which === 38 || e.which === 40) {
+    updown_keypress_handler(e.which);
+  }
+
+  if (screen === screens.welcomeScreen || screen === screens.endScreen) {
+    if (e.which === 13) {
+      $("#start-button").click();
+    }
+  } else if (screen === screens.questionScreen) {
+    if (e.which === 13) {
+      $("#submit-button").click();
+    }
+  } else if (screen === screens.explanationScreen) {
+    switch (e.which) {
+      case 13:
+        $("#next-button").click();
+        break;
+      case 37:
+      case 39: //left, right
+        leftright_keypress_handler(e.which);
+        break;
+    }
+  }
+}
+
 function display_arrow_cols() {
   const $html1 = `
     <div class="left-btn-div">  
@@ -211,8 +237,9 @@ function display_arrow_cols() {
 }
 // collapse navbar-collapse
 function display_navbar() {
-  const $html = `
-  <nav class="d-none d-xl-flex col-xl-2 fixed-top flex-column bg-dark navbar navbar-expand-xl navbar-dark">
+  //d-none d-xl-flex col-xl-2
+  let $html = `
+  <div class="d-xl-flex col-xl-2 fixed-top flex-column bg-dark navbar-dark collapse show" id="navbarToggleExternalContent">
     <div class="navbar-brand">
       <p id="strong-txt">Water Future</p>
       <p id="small-txt">30 min | 10 questions</p>
@@ -239,7 +266,7 @@ function display_navbar() {
       <button class="btn nav-link" type="button" id="nav-item-8" disabled>${titles[7]}</button>
       <button class="btn nav-link" type="button" id="nav-item-9" disabled>${titles[9]}</button>
     </div>
-  </nav>
+  </div>
   `;
   $(".main-body").prepend($html);
 
@@ -259,32 +286,22 @@ function display_navbar() {
       console.log("userOptionsSelection.length: ", userOptionSelections.length);
     }
   });
+
+  setup_nav_btn();
 }
 
-function assign_keypresses(e) {
-  if (e.which === 38 || e.which === 40) {
-    updown_keypress_handler(e.which);
-  }
+function setup_nav_btn() {
+  const $html = `
+    <nav class="navbar navbar-expand-xl navbar-light bg-none">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      </div>
+    </nav>
+  `;
 
-  if (screen === screens.welcomeScreen || screen === screens.endScreen) {
-    if (e.which === 13) {
-      $("#start-button").click();
-    }
-  } else if (screen === screens.questionScreen) {
-    if (e.which === 13) {
-      $("#submit-button").click();
-    }
-  } else if (screen === screens.explanationScreen) {
-    switch (e.which) {
-      case 13:
-        $("#next-button").click();
-        break;
-      case 37:
-      case 39: //left, right
-        leftright_keypress_handler(e.which);
-        break;
-    }
-  }
+  $("#nav-btn-div").append($html);
 }
 
 $(() => {

@@ -176,7 +176,7 @@ const explanations = [
   `
     <div class="row pad-top">
         <iframe src="https://www.youtube.com/embed/oaQCiwzjnCM" width="100%" class="min-video-height" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
+    </div>
     <div class="row pad-top">
       <div class="col-lg-6">
         <p> Fresh water is a renewable resource, yet the world's supply of clean, fresh water is under increasing demand for human activities. The world has an estimated 1.34 billion cubic kilometers of water, but 96.5% of  is salty. Almost 70% of freshwater can be found in the ice caps of Antarctica and Greenland.</p>
@@ -242,7 +242,11 @@ const explanations = [
     `,
   //Q6
   `
-    <p class="pad-top">These statistics show the importance of access to clean freshwater for sanitation and disease prevention, and the rising trend of water stress in the world.</p>
+    <div class="row pad-top">
+      <div class="col-12">
+        <p>These statistics show the importance of access to clean freshwater for sanitation and disease prevention, and the rising trend of water stress in the world.</p>
+      </div>
+    </div>
     `,
   //Q7
   `
@@ -262,7 +266,11 @@ const explanations = [
     `,
   //Q8
   `
-    <p class="pad-top">This is a give-away question. Answer is self-explanatory. Eat less meat and more fruit and vegetables to conserve water!</p>
+    <div class="row pad-top">
+      <div class="col-12">
+        <p>This is a give-away question. Answer is self-explanatory. Eat less meat and more fruit and vegetables to conserve water!</p>
+      </div>
+    </div>      
     `,
   //Q9
   `
@@ -281,7 +289,7 @@ const explanations = [
   //Q10
   `
     <div class="row pad-top">
-        <p>Some examples of the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
+        <div class="col-12"><p>Some examples of the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p></div>
     </div>
     <div class="row g-2">
         <div class="col-xl-6">    
@@ -291,7 +299,7 @@ const explanations = [
             <img class="constrain-image constrain-image-small" src='./media/tshirt-2500l.png' />
         </div>
     </div>
-    <div class="row g-2">
+    <div class="row g-2 pad-top">
         <div class="col-xl-6">
             <img class="constrain-image constrain-image-small" src='./media/hamburger-15000l.png' />
         </div>
@@ -335,6 +343,7 @@ function end_screen() {
   screen = screens.endScreen;
   $(".arrow-col").children().remove();
   $("nav").remove();
+  $("#navbarToggleExternalContent").remove();
 
   $(".left-arrow-col").removeClass("col-xl-4");
   $(".left-arrow-col").addClass("col-xl-3");

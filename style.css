@@ -26,19 +26,28 @@ p {
   background-color: white;
   z-index: 1;
   height: 70px;
-  width: 100%;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
   border-bottom: 1px solid;
   border-color: rgba(128, 128, 128, 0.2);
 }
 
-#mycorr_logo {
+#mycorr-logo-div {
   padding-left: 2%;
 }
 
-#mycorr_email {
+#mycorr-email-div {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
   text-align: right;
-  padding-right: 2%;
   font-size: smaller;
+  padding-right: 3%;
+}
+
+#nav-btn-div {
+  z-index: 2;
 }
 
 #est-text {
@@ -54,12 +63,10 @@ p {
   width: 100%;
   min-width: 450;
   max-width: 800px;
-  display: block;
   margin: 0 auto;
 }
 
 .constrain-image-small {
-  display: block;
   margin: 0 auto;
   max-width: 450px;
 }
@@ -131,45 +138,12 @@ p {
   top: 45%;
   right: 7%;
 }
-/*X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-}
 
-/* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-  .left-btn-div,
-  .right-btn-div {
-    top: 93%;
-    height: 7%;
-    width: 50%;
-    background: white;
-    border: none;
-    border-top: 1px solid lightgrey;
-    text-align: center;
-    padding-top: 1%;
-  }
-}
-
-/* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
-}
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-  .left-btn-div {
-    left: 2%;
-  }
-
-  .right-btn-div {
-    right: 2%;
-  }
-}
-
-.navbar {
-  color: white;
+#navbarToggleExternalContent {
+  width: 250px;
   top: 70px;
   height: 100vh;
-  padding: 0;
+  z-index: 1;
 }
 
 .navbar-brand {
@@ -202,4 +176,58 @@ p {
 button.disabled {
   pointer-events: none;
   cursor: not-allowed;
+}
+
+.navbar-toggler-icon {
+  /* width: 30px;
+  height: auto; */
+}
+
+/*X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .left-btn-div,
+  .right-btn-div {
+    top: 93%;
+    height: 7%;
+    width: 50%;
+    background: white;
+    border: none;
+    border-top: 1px solid lightgrey;
+    text-align: center;
+    padding-top: 1%;
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .left-btn-div {
+    left: 2%;
+  }
+
+  .right-btn-div {
+    right: 2%;
+  }
+  #logo-img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
 }
