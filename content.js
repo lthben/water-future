@@ -274,13 +274,13 @@ const explanations = [
     `,
   //Q9
   `
-  <div class="row">
+  <div class="row ">
     <div class="col-lg-6">
       <p>Why does beef take so much water to produce? Answer: To simplify, let’s look at Beef. Did you know that the juicy steak you love to eat uses up 15,400 liters of water for every 1 kilo? How? </p>
-      <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef. Those grains require water to grow, the farm and slaughterhouse needs to be cleaned,  </p>
+      <p>Well, the cow needs to eat 1,300 kilograms of grains for 3 years before  can be slaughtered and produce 200 kilos of beef.</p>
     </div>
     <div class="col-lg-6">
-      <p>the cow needs to drink – all of these adds up to 3,091,000 liters of water!</p>
+      <p>Those grains require water to grow, the farm and slaughterhouse needs to be cleaned, the cow needs to drink – all of these adds up to 3,091,000 liters of water!</p>
       <p>All of that water just to make an innocent looking but delicious steak.</p>
       <p>In comparison, 1kg of chocolate requires 24,000 litres of water. 1 kg of paper only requires 10 litres of water. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
@@ -289,23 +289,19 @@ const explanations = [
   //Q10
   `
     <div class="row pad-top">
-        <div class="col-12"><p>Some examples of the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p></div>
+      <p>Some examples of the 'hidden' water we all use daily. <a href="https://www.theworldcounts.com/stories/average-daily-water-usage">[Source]</a></p>
     </div>
-    <div class="row g-2">
-        <div class="col-xl-6">    
-            <img class="constrain-image constrain-image-small" src='./media/cocacola-25l.png' />
-        </div>
-        <div class="col-xl-6">
-            <img class="constrain-image constrain-image-small" src='./media/tshirt-2500l.png' />
-        </div>
+    <div class="row gx-2">
+      <img class="constrain-image constrain-image-small" src='./media/cocacola-25l.png' />
     </div>
-    <div class="row g-2 pad-top">
-        <div class="col-xl-6">
-            <img class="constrain-image constrain-image-small" src='./media/hamburger-15000l.png' />
-        </div>
-        <div class="col-xl-6">
-            <img class="constrain-image constrain-image-small" src='./media/coffee-130l.png' />
-        </div>
+    <div class="row gx-2 pad-top">
+      <img class="constrain-image constrain-image-small" src='./media/tshirt-2500l.png' />
+    </div>
+    <div class="row gx-2 pad-top">
+      <img class="constrain-image constrain-image-small" src='./media/hamburger-15000l.png' />
+    </div>
+    <div class="row gx-2 pad-top">
+      <img class="constrain-image constrain-image-small" src='./media/coffee-130l.png' />
     </div>
     `,
 ];
