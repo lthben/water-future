@@ -33,6 +33,10 @@ p {
   border-color: rgba(128, 128, 128, 0.2);
 }
 
+#mycorr-logo-div {
+  padding-left: 5%;
+}
+
 #mycorr-email-div {
   text-align: right;
   font-size: smaller;
