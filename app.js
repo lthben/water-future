@@ -15,7 +15,7 @@ let screens = {
 let screen = screens.welcomeScreen;
 
 function display_question() {
-  if (qnIndex === 0) display_navbar();
+  if (qnIndex === 0 && userOptionSelections.length === 0) display_navbar(); //setup once only
 
   //shift to the right to cater for fixed position nav bar
   $(".left-arrow-col").removeClass("col-xl-3");
