@@ -239,7 +239,7 @@ function display_arrow_cols() {
 function display_navbar() {
   //d-none d-xl-flex col-xl-2
   let $html = `
-  <div class="d-xl-flex col-xl-2 fixed-top flex-column bg-dark navbar-dark collapse show" id="navbarToggleExternalContent">
+  <div class="d-xl-flex col-xl-2 fixed-top flex-column bg-dark navbar-dark collapse" id="navbarToggleExternalContent">
     <div class="navbar-brand">
       <p id="strong-txt">Water Future</p>
       <p id="small-txt">30 min | 10 questions</p>
