@@ -33,21 +33,9 @@ p {
   border-color: rgba(128, 128, 128, 0.2);
 }
 
-#mycorr-logo-div {
-  padding-left: 2%;
-}
-
 #mycorr-email-div {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
   text-align: right;
   font-size: smaller;
-  padding-right: 3%;
-}
-
-#nav-btn-div {
-  z-index: 2;
 }
 
 #est-text {
@@ -176,11 +164,6 @@ p {
 button.disabled {
   pointer-events: none;
   cursor: not-allowed;
-}
-
-.navbar-toggler-icon {
-  /* width: 30px;
-  height: auto; */
 }
 
 /*X-Small devices (portrait phones, less than 576px) */
