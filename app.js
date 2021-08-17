@@ -310,11 +310,23 @@ function setup_nav_btn() {
   $(".collapse").on("show.bs.collapse", function () {
     $(".main-body").css("margin-left", "250px");
     $(".main-body").css("margin-right", "-250px");
+
+    let mql = window.matchMedia("(min-width: 768px)");
+    if (mql.matches) {
+      $(".left-btn-div").css("margin-left", "250px");
+      $(".right-btn-div").css("margin-right", "-250px");
+    }
   });
 
   $(".collapse").on("hide.bs.collapse", function () {
     $(".main-body").css("margin-left", "0");
     $(".main-body").css("margin-right", "0");
+
+    let mql = window.matchMedia("(min-width: 768px)");
+    if (mql.matches) {
+      $(".left-btn-div").css("margin-left", "0");
+      $(".right-btn-div").css("margin-right", "0");
+    }
   });
 }
 
