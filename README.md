@@ -8,7 +8,7 @@
 
 - Original content was researched and curated by me.
 
-- You can use the keyboard `left arrow`, `right arrow` and `Enter` keys to navigate within the app if using a computer.
+- You can use the keyboard `up arrow`, `down arrow`, `left arrow`, `right arrow` and `Enter` keys to navigate within the app if using a computer.
 
 - The sidebar keeps track of your progress and allows you to jump to earlier completed questions.
 
