@@ -8,11 +8,13 @@
 
 - Original content was researched and curated by me.
 
-- You can use the keyboard to navigate within the app if using a computer. The sidebar keeps track of your progress and allows you to jump to earlier completed questions.
+- You can use the keyboard `left arrow`, `right arrow` and `Enter` keys to navigate within the app if using a computer.
+
+- The sidebar keeps track of your progress and allows you to jump to earlier completed questions.
 
 - This app is fully responsive and runs on all screen sizes.
 
-- You can finish this quiz in less than 5 minutes, and about 30 minutes if you watch all the videos.
+- You can finish this quiz in less than 5 minutes, about 30 minutes if you watch all the videos.
 
 ## Explanations of the technologies used
 
@@ -26,7 +28,7 @@
 
 - I then worked on the colour scheme, layout and typography.
 
-- I spent 90% of the time working on the UI/UX aspect, mimicking the user experience on similar professional e-learning websites for quiz content. This meant the need for a menu sidebar with progress tracking and navigational buttons.
+- I spent 80% of the time working on the UI/UX aspect, mimicking the user experience on similar professional e-learning websites for quiz content. This meant the need for a menu sidebar with progress tracking and navigational buttons, and making sure everything looks good on all screen sizes. This was the hardest part.
 
 ## Link to live site
 
