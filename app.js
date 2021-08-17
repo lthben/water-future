@@ -303,10 +303,18 @@ function setup_nav_btn() {
 
   $("#nav-btn-div").append($html);
 
-  $("body").on("click", (e) => {
-    // e.preventDefault();
+  $(window).on("click", () => {
     $(".collapse").collapse("hide");
-    // console.log(e.target);
+  });
+
+  $(".collapse").on("show.bs.collapse", function () {
+    $(".main-body").css("margin-left", "250px");
+    $(".main-body").css("margin-right", "-250px");
+  });
+
+  $(".collapse").on("hide.bs.collapse", function () {
+    $(".main-body").css("margin-left", "0");
+    $(".main-body").css("margin-right", "0");
   });
 }
 
