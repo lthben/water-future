@@ -316,6 +316,12 @@ function setup_nav_btn() {
       $(".left-btn-div").css("margin-left", "250px");
       $(".right-btn-div").css("margin-right", "-250px");
     }
+
+    mql = window.matchMedia("(max-width: 768px)");
+    if (mql.matches) {
+      $(".left-btn-div").css("display", "none");
+      $(".right-btn-div").css("display", "none");
+    }
   });
 
   $(".collapse").on("hide.bs.collapse", function () {
@@ -326,6 +332,12 @@ function setup_nav_btn() {
     if (mql.matches) {
       $(".left-btn-div").css("margin-left", "0");
       $(".right-btn-div").css("margin-right", "0");
+    }
+
+    mql = window.matchMedia("(max-width: 768px)");
+    if (mql.matches) {
+      $(".left-btn-div").css("display", "block");
+      $(".right-btn-div").css("display", "block");
     }
   });
 }
