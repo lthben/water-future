@@ -304,9 +304,9 @@ function setup_nav_btn() {
   $("#nav-btn-div").append($html);
 
   $("body").on("click", (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     $(".collapse").collapse("hide");
-    // console.log(e.target);
+    console.log(e.target);
   });
 }
 
