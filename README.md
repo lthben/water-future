@@ -2,6 +2,8 @@
 
 # About
 
+- This project was done as part of the Software Engineering Immersive course at General Assembly (#SEI 31), Singapore, Aug - Oct 2021.
+
 - Learn about the future of our water and water sustainability in this interactive quiz. Find out fun and amazing facts about water around the world.
 
 - Test your knowledge to see if you can get all 10 questions correct on the first attempt. The questions are designed for learning, so no trick questions!
