@@ -235,7 +235,7 @@ function display_arrow_cols() {
     leftright_keypress_handler(39);
   });
 }
-// collapse navbar-collapse
+
 function display_navbar() {
   //d-none d-xl-flex col-xl-2
   let $html = `
@@ -272,7 +272,7 @@ function display_navbar() {
 
   $(".nav-body").on("click", (e) => {
     e.preventDefault();
-    console.log(e.target.id);
+    // console.log(e.target.id);
     let idStr = e.target.id;
     let idNum = idStr.match(/\d+/g); //extract the number in nav-item-#
     if (
@@ -302,6 +302,12 @@ function setup_nav_btn() {
   `;
 
   $("#nav-btn-div").append($html);
+
+  $("body").on("click", (e) => {
+    e.preventDefault();
+    $(".collapse").collapse("toggle");
+    // console.log(e.target);
+  });
 }
 
 $(() => {
@@ -312,4 +318,4 @@ $(() => {
     assign_keypresses(e);
   });
   welcome_screen();
-}); //end window onload
+});
