@@ -305,7 +305,7 @@ function setup_nav_btn() {
 
   $("body").on("click", (e) => {
     e.preventDefault();
-    $(".collapse").collapse("toggle");
+    $(".collapse").collapse("hide");
     // console.log(e.target);
   });
 }
