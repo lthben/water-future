@@ -30,7 +30,7 @@
 
 - I then worked on the colour scheme, layout and typography.
 
-- I spent 80% of the time working on the UI/UX aspect, mimicking the user experience on similar professional e-learning websites for quiz content. This meant the need for a menu sidebar with progress tracking and navigational buttons, and making sure everything looks good on all screen sizes. This was the hardest part.
+- I spent 80% of the time working on the UI/UX aspect, mimicking the user experience on similar professional e-learning websites for quiz content. This meant the need for navigational buttons and a sidebar menu with lesson content and progress tracking, and making sure everything looks good on all screen sizes. This was the hardest part.
 
 ## Link to live site
 

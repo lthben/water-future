@@ -255,16 +255,16 @@ function display_navbar() {
       </div>
     </div>
     <div class="nav-body">
-      <button class="btn nav-link" type="button" id="nav-item-0" disabled>${titles[0]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-1" disabled>${titles[1]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-2" disabled>${titles[2]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-3" disabled>${titles[3]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-4" disabled>${titles[4]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-5" disabled>${titles[5]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-6" disabled>${titles[6]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-7" disabled>${titles[8]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-8" disabled>${titles[7]}</button>
-      <button class="btn nav-link" type="button" id="nav-item-9" disabled>${titles[9]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-0" disabled>${titles[0]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-1" disabled>${titles[1]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-2" disabled>${titles[2]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-3" disabled>${titles[3]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-4" disabled>${titles[4]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-5" disabled>${titles[5]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-6" disabled>${titles[6]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-7" disabled>${titles[8]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-8" disabled>${titles[7]}</button>
+      <button class="btn nav-link btn-dark link-light" type="button" id="nav-item-9" disabled>${titles[9]}</button>
     </div>
   </div>
   `;

@@ -173,6 +173,9 @@ button.disabled {
 
 /*X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .form-check {
+    padding: 1% 7%;
+  }
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -187,6 +190,9 @@ button.disabled {
     border-top: 1px solid lightgrey;
     text-align: center;
     padding-top: 1%;
+  }
+  .form-check {
+    padding: 1% 6%;
   }
 }
 
